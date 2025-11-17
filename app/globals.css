@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+.container {
+  max-width: 1600px;
+}
+
+.font-laluxes {
+  font-family: var(--font-laluxes), serif;
+}
+
+.font-askha {
+  font-family: var(--font-askha), sans-serif;
+}
+
+.font-quahon {
+  font-family: var(--font-quahon), sans-serif;
+}
+
+/* Seamless marquee styles - ensures continuous linear scrolling */
+.marquee-seamless {
+  gap: 0 !important;
+  display: flex !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+.marquee-seamless > div {
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+.marquee-seamless > div > div {
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  overflow: hidden !important;
+}
+
+/* Hide scrollbars globally for marquee */
+.marquee-seamless,
+.marquee-seamless * {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+.marquee-seamless::-webkit-scrollbar,
+.marquee-seamless *::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
