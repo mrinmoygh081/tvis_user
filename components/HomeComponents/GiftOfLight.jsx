@@ -1,14 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import yelloWbg from "../../public/asset/images/yellowBG.png";
 import treeImg from "../../public/asset/images/tree.png";
 import { Circle, Droplet, Sparkles } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const GiftOfLight = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
-    <section className="relative w-full mmax-h-[100vh] overflow-hidden">
+    <motion.section
+      ref={sectionRef}
+      style={{ y }}
+      className="relative w-full mmax-h-[100vh] overflow-hidden z-40"
+    >
       {/* Background Image */}
       <Image src={yelloWbg} alt="Yellow background" fill priority className="object-cover object-center z-0" />
 
@@ -83,7 +96,7 @@ const GiftOfLight = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

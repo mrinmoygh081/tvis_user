@@ -5,7 +5,7 @@ import leftsideImg from "../../public/asset/images/leftSideImg.jpg";
 
 const AreYouReady = () => {
   return (
-    <section className="w-full flex flex-col lg:flex-row min-h-screen">
+    <section className="w-full flex flex-col lg:flex-row min-h-screen relative z-[60]">
       {/* Left Column - Image */}
       <div className="w-full lg:w-[40%] h-[50vh] md:h-[60vh] lg:h-auto relative">
         <Image src={leftsideImg} alt="Spiritual crystals and herbs" fill className="object-cover" priority />

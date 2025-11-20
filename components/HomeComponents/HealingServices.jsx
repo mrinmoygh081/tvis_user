@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 import greenBg from "../../public/asset/images/GreenBg.png";
 
 const services = [
@@ -63,8 +64,55 @@ const Icon = ({ name }) => {
 };
 
 export default function HealingServices() {
+  const sectionRef = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section className="relative w-full overflow-hidden bg-[#123a30] text-[#e9f0ea]">
+    <motion.section
+      ref={sectionRef}
+      style={{ y }}
+      className="relative w-full overflow-hidden bg-[#123a30] text-[#e9f0ea] z-20"
+    >
       {/* decorative background */}
       <Image
         src={greenBg}
@@ -78,12 +126,18 @@ export default function HealingServices() {
       {/* content container */}
       <div className="relative z-10 mx-auto max-w-[1200px] px-6 md:px-10 py-20 md:py-28 lg:py-36">
         {/* Title */}
-        <header className="mb-10 md:mb-14 text-center">
+        <motion.header 
+          className="mb-10 md:mb-14 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headerVariants}
+        >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif tracking-tight">
             <span className="mr-2">Reiki &amp; Other</span>
-            <span className="inline-block bg-[#15382f]/70 px-3 py-1 rounded-sm text-[#d7f0e5]">Healing Services</span>
+            <span className="inline-block  px-3 py-1 rounded-sm text-[#d7f0e5]">Healing Services</span>
           </h2>
-        </header>
+        </motion.header>
 
         {/* layout: list left, empty right (background decoration sits on right) */}
         <div className="flex flex-col md:flex-row gap-8">
@@ -91,12 +145,24 @@ export default function HealingServices() {
           <div className="md:w-3/5">
             <ul className="space-y-8">
               {services.map((s, i) => (
-                <li key={s.title} className="flex items-start gap-6 md:gap-8">
+                <motion.li 
+                  key={s.title} 
+                  className="flex items-start gap-6 md:gap-8 p-4 rounded-xl transition-colors duration-300 hover:bg-[#1a4d40]/30 cursor-default"
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  whileHover={{ scale: 1.02, x: 10 }}
+                >
                   {/* icon badge */}
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#e9f0ea] text-[#123a30] flex items-center justify-center shadow-sm">
+                    <motion.div 
+                      className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#e9f0ea] text-[#123a30] flex items-center justify-center shadow-sm"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
+                    >
                       <Icon name={s.icon} />
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* text */}
@@ -106,7 +172,7 @@ export default function HealingServices() {
                       {s.desc}
                     </p>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -118,6 +184,6 @@ export default function HealingServices() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

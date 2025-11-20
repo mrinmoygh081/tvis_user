@@ -1,9 +1,22 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const LovingWord = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
-    <section className="w-full bg-white py-16 px-4 md:px-8">
+    <motion.section
+      ref={sectionRef}
+      style={{ y }}
+      className="w-full bg-white py-16 px-4 md:px-8 relative z-50"
+    >
       <div className="w-full mx-auto text-center">
         {/* Main Heading - "Loving Words" */}
         <h2 className="font-laluxes text-[#ff8a80] text-5xl md:text-6xl lg:text-7xl mb-8">Loving Words</h2>
@@ -22,7 +35,7 @@ const LovingWord = () => {
         {/* Attribution */}
         <p className="font-askha text-[#2d5016] text-sm md:text-base lg:text-lg font-semibold tracking-wide uppercase">TANVI SINHA, IT PROFESSIONAL</p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
