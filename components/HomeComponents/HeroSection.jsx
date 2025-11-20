@@ -7,7 +7,7 @@ import profileImg from "../../public/asset/images/HerosecImg/profile.jpg";
 
 const HeroSection = () => {
   return (
-    <div className="bg-[#F3EDE5] max-h-[100vh]">
+    <div className="bg-[#F3EDE5]">
       <div className="min-h-screen lg:h-auto  flex flex-col lg:flex-row justify-center items-center w-full lg:max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0">
       
       
