@@ -1,91 +1,86 @@
-import React from 'react'
+"use client";
+
+import React from "react";
 import Image from "next/image";
-import backGroundImg from "../../public/asset/images/GiftOfLightBG.jpg";
+import yelloWbg from "../../public/asset/images/yellowBG.png";
+import treeImg from "../../public/asset/images/tree.png";
+import { Circle, Droplet, Sparkles } from "lucide-react";
 
 const GiftOfLight = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative w-full mmax-h-[100vh] overflow-hidden">
+      {/* Background Image */}
+      <Image src={yelloWbg} alt="Yellow background" fill priority className="object-cover object-center z-0" />
 
-      {/* Background */}
-      <Image
-        src={backGroundImg}
-        alt="Gift Of Light Background"
-        fill
-        priority
-        className="object-cover object-center z-0"
-        sizes="100vw"
-      />
+      {/* CONTENT WRAPPER */}
+      <div className="relative z-10 w-full h-full flex flex-col lg:flex-row items-center lg:items-center justify-between px-6 md:px-12 lg:px-20 py-16 lg:py-0">
+        {/* LEFT IMAGE */}
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-10 lg:mb-0">
+          <div className="relative w-[320px] sm:w-[380px] md:w-[420px] lg:w-[520px] xl:w-[580px]">
+            <Image src={treeImg} alt="Tree with candle" className="object-contain" priority />
+          </div>
+        </div>
 
-      {/* CONTENT OVERLAY */}
-      <div className="relative z-10 w-full h-full flex items-center">
-        
-        {/* FLEX CONTAINER (LEFT IMG ALREADY EXISTS IN BG) */}
-        <div className="w-full  flex flex-col md:flex-row items-center justify-between px-6 md:px-12 lg:px-20 gap-10 bg-rose-600">
-
-          {/* LEFT side is already placed in your background image */}
-
-          {/* RIGHT SIDE CONTENT */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
-
-            {/* Star Icon */}
-            <div className="flex justify-center md:justify-start mb-3">
-              <span className="text-3xl text-[#244a37]">✦</span>
-            </div>
-
-            {/* Heading */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#244a37] font-semibold leading-tight">
-              “A Gift Of Light That Heals”
-            </h2>
-
-            {/* Subheading */}
-            <p className="mt-4 text-base md:text-lg text-[#244a37] font-medium leading-relaxed max-w-lg">
-              Envelop your space in serene light and restorative energy with our reiki-infused luxury crystal candles.
-            </p>
-
-            {/* FEATURES ROW */}
-            <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-10">
-
-              {/* Feature 1 */}
-              <div className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl">
-                  ●
-                </div>
-                <p className="mt-3 text-sm md:text-base text-[#244a37] font-semibold text-center">
-                  AA+ GRADE<br/>SOY WAX
-                </p>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl">
-                  💧
-                </div>
-                <p className="mt-3 text-sm md:text-base text-[#244a37] font-semibold text-center">
-                  100% NATURAL<br/>ESSENTIAL OILS
-                </p>
-              </div>
-
-              {/* Feature 3 */}
-              <div className="flex flex-col items-center">
-                <div className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl">
-                  ✦
-                </div>
-                <p className="mt-3 text-sm md:text-base text-[#244a37] font-semibold text-center">
-                  NATURAL HEALING<br/>CRYSTALS
-                </p>
-              </div>
-
-            </div>
-
-            {/* SHOP NOW BUTTON */}
-            <div className="mt-10">
-              <button className="px-8 py-3 bg-[#FF8F71] text-white rounded-full font-medium shadow-md hover:opacity-90 transition">
-                Shop Now
-              </button>
-            </div>
-
+        {/* RIGHT CONTENT */}
+        <div className="w-full lg:w-1/2 text-center lg:text-left max-w-xl lg:max-w-[600px]">
+          {/* Small Star Icon */}
+          <div className="flex justify-center lg:justify-start mb-3">
+            <span className="text-3xl text-[#244a37]">
+              <Sparkles className="w-7 h-7" />
+            </span>
           </div>
 
+          {/* Heading */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#244a37] font-semibold leading-tight">“A Gift Of Light That Heals”</h2>
+
+          {/* Subheading */}
+          <p className="mt-4 text-base md:text-lg text-[#244a37] font-medium leading-relaxed">
+            Envelop your space in serene light and restorative energy with our reiki-infused luxury crystal candles.
+          </p>
+
+          {/* FEATURES */}
+          <div className="mt-12 flex flex-wrap justify-center lg:justify-start gap-10">
+            {/* Feature 1 */}
+            <div className="flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl">
+                <Circle className="w-7 h-7" />
+              </div>
+              <p className="mt-3 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center">
+                AA+ GRADE
+                <br />
+                SOY WAX
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl">
+                <Droplet className="w-7 h-7" />
+              </div>
+              <p className="mt-3 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center">
+                100% NATURAL
+                <br />
+                ESSENTIAL OILS
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="flex flex-col items-center">
+              <div className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl">
+                <Sparkles className="w-7 h-7" />
+              </div>
+              <p className="mt-3 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center">
+                NATURAL HEALING
+                <br />
+                CRYSTALS
+              </p>
+            </div>
+          </div>
+
+          {/* BUTTON */}
+          <div className="mt-10">
+            <button className="px-8 py-3 bg-[#FF8F71] text-white rounded-full font-medium shadow-lg hover:opacity-90 transition">Shop Now</button>
+          </div>
         </div>
       </div>
     </section>
