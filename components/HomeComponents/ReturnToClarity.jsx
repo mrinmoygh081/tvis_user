@@ -45,13 +45,6 @@ const ReturnToClarity = () => {
   const statsRef = useRef(null);
   const rightInView = useInView(rightColumnRef, { once: true, amount: 0.2 });
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
   const paragraphVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -62,9 +55,8 @@ const ReturnToClarity = () => {
   };
 
   return (
-    <motion.section
+    <section
       ref={sectionRef}
-      style={{ y }}
       className="bg-[#d5dacd] text-[#244a37] relative z-10"
     >
       <motion.div
@@ -232,7 +224,7 @@ const ReturnToClarity = () => {
           </motion.p>
         </div>
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 

@@ -2,6 +2,8 @@
 import React from "react";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 const Footer = () => {
   // Color constants - matching navbar
   const colors = {
@@ -25,33 +27,74 @@ const Footer = () => {
     ],
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <footer className="w-full p-0 bg-[#173c2c] text-[#dcae59]">
+    <motion.footer 
+      className="w-full p-0 bg-[#173c2c] text-[#dcae59]"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="grid grid-cols-3 gap-0 min-h-[400px]" style={{ gridTemplateRows: "1fr 1fr auto" }}>
         {/* div1 - Bottom row (spans all columns) */}
-        <div className="col-span-3 row-start-3 row-end-4 py-3 flex items-center justify-center border-t border-[#dcae59]">
+        <motion.div 
+          className="col-span-3 row-start-3 row-end-4 py-3 flex items-center justify-center border-t border-[#dcae59]"
+          variants={itemVariants}
+        >
           <p className="font-sans text-sm text-center">©2026 by TVIS. All Rights Reserved</p>
-        </div>
+        </motion.div>
 
         {/* div2 - Row 1, Column 1 (Contact) */}
-        <div className="col-start-1 col-end-2 row-start-1 row-end-2  flex flex-col text-end p-6 mb-2">
+        <motion.div 
+          className="col-start-1 col-end-2 row-start-1 row-end-2  flex flex-col text-end p-6 mb-2"
+          variants={itemVariants}
+        >
           <h3 className="font-sans text-sm font-medium">Contact me</h3>
           <a href="mailto:smita@tvisworld.com" className="font-sans text-sm hover:opacity-80 transition-opacity">
             smita@tvisworld.com
           </a>
-        </div>
+        </motion.div>
 
         {/* div3 - Row 1, Column 2 (Navigation Links) */}
-        <div className="col-start-2 col-end-3 row-start-1 row-end-2 p-6 text-end flex flex-col border-l border-r border-[#dcae59]">
+        <motion.div 
+          className="col-start-2 col-end-3 row-start-1 row-end-2 p-6 text-end flex flex-col border-l border-r border-[#dcae59]"
+          variants={itemVariants}
+        >
           {footerLinks.navigation.map((link) => (
             <Link key={link.label} href={link.href} className="font-sans text-sm hover:opacity-80 transition-opacity block mb-2">
               {link.label}
             </Link>
           ))}
-        </div>
+        </motion.div>
 
         {/* div4 - Row 1, Column 3 (Policy Links) */}
-        <div className="col-start-3 col-end-4 row-start-1 row-end-2 p-6 text-start flex flex-col">
+        <motion.div 
+          className="col-start-3 col-end-4 row-start-1 row-end-2 p-6 text-start flex flex-col"
+          variants={itemVariants}
+        >
           {footerLinks.policies.map((link, index) => (
             <React.Fragment key={link.label}>
               <Link href={link.href} className="font-sans text-sm hover:opacity-80 transition-opacity block  mb-2">
@@ -59,10 +102,13 @@ const Footer = () => {
               </Link>
             </React.Fragment>
           ))}
-        </div>
+        </motion.div>
 
         {/* div5 - Row 2, Column 1 (Logo area - divided by 3) */}
-        <div className="col-start-1 col-end-2 row-start-2 row-end-3 p-0 border-t border-[#dcae59]">
+        <motion.div 
+          className="col-start-1 col-end-2 row-start-2 row-end-3 p-0 border-t border-[#dcae59]"
+          variants={itemVariants}
+        >
           <div className="flex h-full">
             {/* Part 1 - Empty */}
             <div className="flex-1"></div>
@@ -75,20 +121,26 @@ const Footer = () => {
             {/* Part 3 - Empty */}
             <div className="flex-1"></div>
           </div>
-        </div>
+        </motion.div>
 
         {/* div6 - Row 2, Columns 2-3 (Address) */}
-        <div className="col-start-2 col-end-4 row-start-2 row-end-3 p-6 text-start border-l border-t border-[#dcae59]">
+        <motion.div 
+          className="col-start-2 col-end-4 row-start-2 row-end-3 p-6 text-start border-l border-t border-[#dcae59]"
+          variants={itemVariants}
+        >
           <div className="flex flex-col justify-center h-full">
             <p className="font-sans text-sm">GKVK Road</p>
             <p className="font-sans text-sm">Bangalore, India</p>
           </div>
-        </div>
+        </motion.div>
 
         {/* div7 - Horizontal divider between rows (spans all columns) */}
-        <div className="col-span-3 row-start-2 row-end-3 p-0 h-px bg-[#dcae59] z-10"></div>
+        <motion.div 
+          className="col-span-3 row-start-2 row-end-3 p-0 h-px bg-[#dcae59] z-10"
+          variants={itemVariants}
+        ></motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
