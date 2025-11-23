@@ -39,7 +39,7 @@ const LovingWord = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
       >
         {/* Main Heading - "Loving Words" */}
         <motion.h2 

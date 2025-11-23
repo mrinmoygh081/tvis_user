@@ -68,18 +68,25 @@ const AreYouReady = () => {
           variants={shutterVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         />
         
-        {/* Image with Scale Effect */}
+        {/* Video with Scale Effect */}
         <motion.div 
           className="relative w-full h-full"
           variants={imageScaleVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
-          <Image src={leftsideImg} alt="Spiritual crystals and herbs" fill className="object-cover" priority />
+          <video 
+            src="/asset/video/contactImg.mp4"
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </motion.div>
       </div>
 
@@ -89,7 +96,7 @@ const AreYouReady = () => {
         variants={formContainerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         <div className="mx-auto w-full max-w-2xl">
           {/* Headline */}
@@ -126,7 +133,7 @@ const AreYouReady = () => {
                   type="text"
                   id="firstName"
                   name="firstName"
-                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016] rounded bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
+                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
               <motion.div className="flex-1" variants={itemVariants}>
@@ -137,7 +144,7 @@ const AreYouReady = () => {
                   type="text"
                   id="lastName"
                   name="lastName"
-                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016] rounded bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
+                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
             </div>
@@ -153,7 +160,7 @@ const AreYouReady = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016] rounded bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
+                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
               <motion.div className="flex-1" variants={itemVariants}>
@@ -164,7 +171,7 @@ const AreYouReady = () => {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016] rounded bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
+                  className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
             </div>
@@ -179,14 +186,14 @@ const AreYouReady = () => {
                 name="message"
                 rows={5}
                 required
-                className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016] rounded bg-transparent text-[#2d5016] font-sans text-sm sm:text-base resize-none focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
+                className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base resize-none focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
               ></textarea>
             </motion.div>
 
             {/* Submit Button */}
             <motion.button
               type="submit"
-              className="w-full sm:w-auto py-3 px-6 sm:px-8 bg-[#ff6b6b] text-white font-sans font-semibold text-sm sm:text-base rounded-lg hover:bg-[#ff5252] transition-colors duration-200 mt-6"
+              className="w-full sm:w-auto py-3 px-6 sm:px-8 bg-[#e75f47] text-black font-sans font-semibold text-sm sm:text-base rounded-full hover:bg-[#ff5252] transition-colors duration-200 mt-6"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

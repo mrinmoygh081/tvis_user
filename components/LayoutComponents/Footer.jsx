@@ -56,7 +56,7 @@ const Footer = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
     >
       <div className="grid grid-cols-3 gap-0 min-h-[400px]" style={{ gridTemplateRows: "1fr 1fr auto" }}>
         {/* div1 - Bottom row (spans all columns) */}
@@ -64,27 +64,28 @@ const Footer = () => {
           className="col-span-3 row-start-3 row-end-4 py-3 flex items-center justify-center border-t border-[#dcae59]"
           variants={itemVariants}
         >
-          <p className="font-sans text-sm text-center">©2026 by TVIS. All Rights Reserved</p>
+          <p className="font-sans text-base text-center">©2026 by TVIS. All Rights Reserved</p>
         </motion.div>
 
         {/* div2 - Row 1, Column 1 (Contact) */}
         <motion.div 
-          className="col-start-1 col-end-2 row-start-1 row-end-2  flex flex-col text-end p-6 mb-2"
+          className="col-start-1 col-end-2 row-start-1 row-end-2  flex flex-col items-center md:items-end md:text-end   justify-end px-4 mb-2"
           variants={itemVariants}
         >
-          <h3 className="font-sans text-sm font-medium">Contact me</h3>
-          <a href="mailto:smita@tvisworld.com" className="font-sans text-sm hover:opacity-80 transition-opacity">
+          <h3 className="font-sans text-base font-medium">Contact me</h3>
+          
+          <h3 href="mailto:smita@tvisworld.com" className="font-sans text-sm hover:opacity-80 transition-opacity">
             smita@tvisworld.com
-          </a>
+          </h3>
         </motion.div>
 
         {/* div3 - Row 1, Column 2 (Navigation Links) */}
         <motion.div 
-          className="col-start-2 col-end-3 row-start-1 row-end-2 p-6 text-end flex flex-col border-l border-r border-[#dcae59]"
+          className="col-start-2 col-end-3 row-start-1 row-end-2 p-4 text-end flex flex-col border-l border-r border-[#dcae59]"
           variants={itemVariants}
         >
           {footerLinks.navigation.map((link) => (
-            <Link key={link.label} href={link.href} className="font-sans text-sm hover:opacity-80 transition-opacity block mb-2">
+            <Link key={link.label} href={link.href} className="font-sans text-base hover:opacity-80 transition-opacity block mb-2">
               {link.label}
             </Link>
           ))}
@@ -92,12 +93,12 @@ const Footer = () => {
 
         {/* div4 - Row 1, Column 3 (Policy Links) */}
         <motion.div 
-          className="col-start-3 col-end-4 row-start-1 row-end-2 p-6 text-start flex flex-col"
+          className="col-start-3 col-end-4 row-start-1 row-end-2 p-4 text-start flex flex-col"
           variants={itemVariants}
         >
           {footerLinks.policies.map((link, index) => (
             <React.Fragment key={link.label}>
-              <Link href={link.href} className="font-sans text-sm hover:opacity-80 transition-opacity block  mb-2">
+              <Link href={link.href} className="font-sans text-base hover:opacity-80 transition-opacity block  mb-2">
                 {link.label}
               </Link>
             </React.Fragment>
@@ -125,12 +126,12 @@ const Footer = () => {
 
         {/* div6 - Row 2, Columns 2-3 (Address) */}
         <motion.div 
-          className="col-start-2 col-end-4 row-start-2 row-end-3 p-6 text-start border-l border-t border-[#dcae59]"
+          className="col-start-2 col-end-4 row-start-2 row-end-3 p-4 text-start border-l border-t border-[#dcae59]"
           variants={itemVariants}
         >
           <div className="flex flex-col justify-center h-full">
-            <p className="font-sans text-sm">GKVK Road</p>
-            <p className="font-sans text-sm">Bangalore, India</p>
+            <p className="font-sans text-base">GKVK Road</p>
+            <p className="font-sans text-base">Bangalore, India</p>
           </div>
         </motion.div>
 

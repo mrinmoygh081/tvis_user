@@ -48,28 +48,22 @@ const HeroSection = () => {
   return (
     <div
       ref={targetRef}
-      className="bg-[#F3EDE5] overflow-x-hidden sticky top-0 z-0"
-      style={{
-        height: "100vh",
-        maxHeight: "100vh",
-        overflowY: "hidden",
-        width: "100%",
-      }}
+      className="bg-[#F3EDE5] relative z-0 min-h-screen lg:h-screen w-full overflow-hidden"
     >
       {/* Background Layer - moves slowest */}
       <motion.div className="absolute inset-0 bg-[#F3EDE5] z-0" style={{ y: backgroundY }} />
 
       {/* Content Layer - moves with parallax */}
       <motion.div
-        className="relative z-30 h-full flex flex-col lg:flex-row justify-center items-center w-full lg:max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 overflow-x-hidden overflow-y-hidden"
-        style={{ y: contentY, height: "100%", maxHeight: "100%" }}
+        className="relative z-30 lg:h-full flex flex-col lg:flex-row justify-center items-center w-full lg:max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 overflow-hidden"
+        style={{ y: contentY }}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
       >
         <motion.div id="left" className="w-full lg:h-full lg:w-3/5 flex flex-col py-6 sm:py-8 md:py-10 lg:py-0" variants={fadeUp} custom={0.1}>
           <div className="w-full h-full flex flex-col ">
-            <div id="top" className="w-full lg:h-1/4 py-4 lg:py-4 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex items-center lg:items-start ">
+            <div id="top" className=" w-full lg:h-1/4 md:h-1/2 h-1/2 py-4 lg:pt-4 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex items-center lg:items-start ">
               <motion.div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36" variants={scaleIn}>
                 <Image src={Logo} alt="TVIS Logo" className="w-full h-full object-contain" />
               </motion.div>
@@ -85,7 +79,7 @@ const HeroSection = () => {
                 {/* Main Heading */}
                 <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-center items-center md:items-start ">
                   <motion.h1
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-serif text-[#2d4a47] leading-tight text-center md:text-left"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-quahon text-[#2d4a47] leading-tight text-center md:text-left"
                     variants={fadeUp}
                     custom={0.3}
                   >
@@ -94,7 +88,7 @@ const HeroSection = () => {
 
                   {/* CTA Button */}
                   <motion.button
-                    className="inline-block bg-[#e8876d] hover:bg-[#d97560] text-black font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-colors duration-300 text-xs sm:text-sm uppercase tracking-wide w-fit mb-6"
+                    className="inline-block bg-[#e75f47] hover:bg-[#d97560] text-black font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-colors duration-300 text-xs sm:text-sm uppercase tracking-wide w-fit mb-6"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     variants={fadeUp}
@@ -149,7 +143,7 @@ const HeroSection = () => {
           <div className="h-full flex flex-col">
             <motion.div id="image" className="lg:h-5/6 w-full flex justify-center lg:justify-start items-end pb-4 sm:pb-6 lg:pb-0" variants={scaleIn} style={{ y: rightImageY }}>
               <motion.div
-                className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none aspect-square sm:aspect-[4/5] lg:aspect-auto lg:h-[550px]"
+                className="hidden md:block w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none aspect-square sm:aspect-[4/5] lg:aspect-auto lg:h-[550px]"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 120, damping: 15 }}
               >
@@ -157,7 +151,7 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            <motion.div id="text" className="lg:h-1/6 w-full flex items-center justify-center lg:justify-start pt-4 sm:pt-6 lg:pt-0" variants={fadeUp} custom={0.5}>
+            <motion.div id="text" className="lg:h-1/6 w-full flex items-center justify-center lg:justify-start pt-0 sm:pt-0 lg:pt-0">
               <div className="text-center lg:text-center w-full lg:w-[80%] px-2 lg:px-0">
                 <p className="text-xs sm:text-sm text-[#2d4a47] uppercase tracking-widest font-semibold">Energy Healer • Mentor • Soul Coach • Mystic Teacher</p>
               </div>

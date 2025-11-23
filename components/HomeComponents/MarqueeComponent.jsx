@@ -6,7 +6,7 @@ const MarqueeComponent = () => {
   const services = ["Reiki Healing", "Guided Meditations", "Past Life Regression"];
 
   return (
-    <section className="w-full bg-[#FF8F71] relative overflow-hidden">
+    <section className="w-full bg-[#e75f47] relative overflow-hidden">
       <div className="py-8 md:py-10 overflow-hidden">
         <Marquee speed={50} gradient={false} pauseOnHover={false} autoFill={true} className="marquee-seamless">
           {services.map((service, idx) => (

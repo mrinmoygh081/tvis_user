@@ -8,13 +8,12 @@ import profileImg from "../../public/asset/images/HerosecImg/profile.jpg";
 // Count Up Number Component
 const CountUpNumber = ({ target, suffix = "+", duration = 2 }) => {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.3 });
+  const inView = useInView(ref, { once: false, amount: 0.3 });
 
   useEffect(() => {
-    if (inView && !isVisible) {
-      setIsVisible(true);
+    if (inView) {
+      // Animate count up
       let startTime = null;
       const animate = (currentTime) => {
         if (!startTime) startTime = currentTime;
@@ -28,8 +27,11 @@ const CountUpNumber = ({ target, suffix = "+", duration = 2 }) => {
         }
       };
       requestAnimationFrame(animate);
+    } else {
+      // Reset count when out of view
+      setCount(0);
     }
-  }, [inView, isVisible, target, duration]);
+  }, [inView, target, duration]);
 
   return (
     <span ref={ref}>
@@ -43,27 +45,17 @@ const ReturnToClarity = () => {
   const sectionRef = useRef(null);
   const rightColumnRef = useRef(null);
   const statsRef = useRef(null);
-  const rightInView = useInView(rightColumnRef, { once: true, amount: 0.2 });
-
-  const paragraphVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
 
   return (
     <section
       ref={sectionRef}
-      className="bg-[#d5dacd] text-[#244a37] relative z-10"
+      className="bg-[#d5dacd] text-[#244a37] relative z-10 "
     >
       <motion.div
-        className="mx-auto w-full lg:max-w-[1400px] px-6 md:px-10 py-10 md:py-16 min-h-screen flex flex-col md:flex-row"
+        className="mx-auto w-full lg:max-w-[1400px] px-6 md:px-10 py-10 md:py-10 min-h-screen flex flex-col md:flex-row justify-center items-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* LEFT: 2/5 on md+, centered on mobile */}
@@ -84,7 +76,7 @@ const ReturnToClarity = () => {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-laluxes leading-tight text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.6 }}
               >
                 Smita Saha
@@ -93,7 +85,7 @@ const ReturnToClarity = () => {
                 className="mt-2 text-sm sm:text-base md:text-base font-semibold text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 Certified Energy Healer
@@ -106,7 +98,7 @@ const ReturnToClarity = () => {
               className="w-full max-w-md mt-6 flex justify-center  items-center "
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
               <div className="flex flex-wrap justify-center items-center gap-8">
@@ -137,28 +129,28 @@ const ReturnToClarity = () => {
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-semibold mb-3"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            “A Return to Clarity”
+            "A Return to Clarity"
           </motion.h2>
 
           <motion.p
             className="text-sm sm:text-base md:text-base leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <strong className="italic">Smita Saha, is a professional certified “Psychic Energy Healing Therapist and a Reiki Grandmaster”,</strong> based out of Bangalore, India.
+            <strong className="italic">Smita Saha, is a professional certified "Psychic Energy Healing Therapist and a Reiki Grandmaster",</strong> based out of Bangalore, India.
           </motion.p>
 
           <motion.p
             className="mt-2 text-sm sm:text-base md:text-base leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             I am an intuitive Psychic Energy Healer dedicated to helping individuals unlock their inner potentials. I have experienced clairvoyance and psychic occurrences from an
             early age and under divine guidance, I was nudged to pursue the path of a professional energy healing therapist after a corporate career in fashion & retail spanning
@@ -167,25 +159,25 @@ const ReturnToClarity = () => {
 
           <motion.p
             className="mt-2 text-sm sm:text-base md:text-base leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             With a profound connection to the unseen realms, I practise and offer transformative healing experiences through various healing modalities like{" "}
             <strong className="italic">
               PLR (Past Life Regression), Reiki Healing, Akashic Records, Life Between Life Therapist, Psychic Surgery, Inner Child Healing, Oracle Card Reading, Animal Telepathic
               Communication, EFT (Emotional Freedom Technique)
             </strong>
-            , and Ho’oponopono Master. I also offer Angelic Healing, Chakra Balancing, EMDR, Ancestor Healing, and Family Constellations.
+            , and Ho'oponopono Master. I also offer Angelic Healing, Chakra Balancing, EMDR, Ancestor Healing, and Family Constellations.
           </motion.p>
 
           <motion.p
             className="mt-2 text-sm sm:text-base md:text-base leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             <strong className="font-semibold">With more than 800+ client sessions and 14+ healing modalities,</strong> I continue to serve people with a compassionate and
             personalised approach, helping them to step into their fullest potential and live a life filled with purpose, love, and light.
@@ -193,10 +185,10 @@ const ReturnToClarity = () => {
 
           <motion.p
             className="mt-2 text-sm sm:text-base md:text-base leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             Beyond my one-on-one sessions, I was encouraged to share the universal energy more widely. Which inspired me to initiate TVIS, the healing light™, a brand that offers
             pure energised luxury wellness products in small batches. Each product is meticulously handcrafted and energised to radiate positive energy, transforming body & soul
@@ -205,20 +197,20 @@ const ReturnToClarity = () => {
 
           <motion.p
             className="mt-2 text-sm sm:text-base md:text-base leading-relaxed"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            My life’s purpose, passion, and joy lies in channeling this universal light energy for collective spiritual expansion.
+            My life's purpose, passion, and joy lies in channeling this universal light energy for collective spiritual expansion.
           </motion.p>
 
           <motion.p
             className="mt-6 italic font-semibold text-sm sm:text-base md:text-base"
-            variants={paragraphVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             Discover the Healing Light within, with me.
           </motion.p>

@@ -177,41 +177,53 @@ export default function HealingServices() {
         <div className="flex flex-col md:flex-row gap-8">
           {/* left column (services) */}
           <div className="md:w-3/5">
-            <motion.ul 
-              className="space-y-8"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              {services.map((s, i) => (
-                <motion.li 
-                  key={s.title} 
-                  className="flex items-start gap-6 md:gap-8 p-4 rounded-xl transition-all duration-300 hover:bg-[#1a4d40]/40 cursor-default border border-transparent hover:border-[#e9f0ea]/20 hover:shadow-lg"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02, x: 15, transition: { duration: 0.2 } }}
-                >
-                  {/* icon badge */}
-                  <div className="flex-shrink-0">
-                    <motion.div 
-                      className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#e9f0ea] text-[#123a30] flex items-center justify-center shadow-sm"
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <Icon name={s.icon} />
-                    </motion.div>
-                  </div>
+            <ul className="space-y-8">
+              {services.map((s, i) => {
+                const [isHovered, setIsHovered] = React.useState(false);
+                
+                return (
+                  <motion.li 
+                    key={s.title} 
+                    className="flex items-start gap-6 md:gap-8 p-4 rounded-xl transition-all duration-300 hover:bg-[#1a4d40]/40 cursor-default border border-transparent hover:border-[#e9f0ea]/20 hover:shadow-lg"
+                    initial={{ opacity: 0, y: 40, x: -20 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: i * 0.05,
+                      ease: [0.25, 0.1, 0.25, 1],
+                    }}
+                    onHoverStart={() => setIsHovered(true)}
+                    onHoverEnd={() => setIsHovered(false)}
+                  >
+                    {/* icon badge */}
+                    <div className="flex-shrink-0">
+                      <motion.div 
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#e9f0ea] text-[#123a30] flex items-center justify-center shadow-sm"
+                        animate={isHovered ? { 
+                          scale: 1.15,
+                          boxShadow: "0 0 25px rgba(233, 240, 234, 0.8), 0 0 50px rgba(233, 240, 234, 0.4)",
+                        } : {
+                          scale: 1,
+                          boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Icon name={s.icon} />
+                      </motion.div>
+                    </div>
 
-                  {/* text */}
-                  <div className="min-w-0">
-                    <h3 className="text-base md:text-lg font-semibold text-[#ff8f71] mb-2">{s.title}</h3>
-                    <p className="text-sm md:text-base leading-relaxed text-[#dfe9e3]">
-                      {s.desc}
-                    </p>
-                  </div>
-                </motion.li>
-              ))}
-            </motion.ul>
+                    {/* text */}
+                    <div className="min-w-0">
+                      <h3 className="text-base md:text-lg font-semibold text-[#ff8f71] mb-2">{s.title}</h3>
+                      <p className="text-sm md:text-base leading-relaxed text-[#dfe9e3]">
+                        {s.desc}
+                      </p>
+                    </div>
+                  </motion.li>
+                );
+              })}
+            </ul>
           </div>
 
           {/* spacer / right column - background art sits here */}

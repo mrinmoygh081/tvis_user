@@ -11,7 +11,7 @@ import GiftOfLight from "../components/HomeComponents/GiftOfLight";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="">
       <HeroSection />
       <ReturnToClarity />
       <HealingServices />

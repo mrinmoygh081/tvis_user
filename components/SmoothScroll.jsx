@@ -8,32 +8,13 @@ export default function SmoothScroll({ children }) {
 
   useEffect(() => {
     setIsMounted(true);
-    
-    // Ensure body doesn't exceed viewport on initial load
-    const checkHeight = () => {
-      if (window.innerHeight >= document.body.scrollHeight) {
-        document.body.style.overflowY = "hidden";
-      } else {
-        document.body.style.overflowY = "auto";
-      }
-    };
-    
-    // Check immediately and after a short delay
-    checkHeight();
-    const timer = setTimeout(checkHeight, 100);
-    
-    // Also check on resize
-    window.addEventListener("resize", checkHeight);
-    
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("resize", checkHeight);
-      document.body.style.overflowY = "";
-    };
   }, []);
 
   useEffect(() => {
     if (!isMounted) return;
+
+    // Add class to body to enable normal scrolling after Lenis is ready
+    document.body.classList.add('lenis-ready');
 
     const lenis = new Lenis({
       duration: 1.2,
@@ -50,6 +31,7 @@ export default function SmoothScroll({ children }) {
 
     return () => {
       lenis.destroy();
+      document.body.classList.remove('lenis-ready');
     };
   }, [isMounted]);
 
