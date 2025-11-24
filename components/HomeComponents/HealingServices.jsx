@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import greenBg from "../../public/asset/images/GreenBg.png";
+import greenBg from "../../public/asset/images/GreenBg2.png";
 
 const services = [
   {
@@ -158,7 +158,7 @@ export default function HealingServices() {
       </motion.div>
 
       {/* content container */}
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 md:px-10 py-20 md:py-28 lg:py-36">
+      <div className="relative z-10 mx-auto container px-6 md:px-10 py-20 md:py-28 lg:py-36">
         {/* Title */}
         <motion.header 
           className="mb-10 md:mb-14 text-center"

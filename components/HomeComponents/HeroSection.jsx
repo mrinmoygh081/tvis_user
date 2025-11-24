@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import Logo from "../../public/asset/images/HerosecImg/Logo2.png";
+import Logo from "../../public/asset/images/HerosecImg/Logo3.png";
 import HeroImg from "../../public/asset/images/HerosecImg/heroImg.jpg";
 import HeroImg2 from "../../public/asset/images/HerosecImg/hero2.png";
 import profileImg from "../../public/asset/images/HerosecImg/profile.jpg";
@@ -64,7 +64,7 @@ const HeroSection = () => {
         <motion.div id="left" className="w-full lg:h-full lg:w-3/5 flex flex-col py-6 sm:py-8 md:py-10 lg:py-0" variants={fadeUp} custom={0.1}>
           <div className="w-full h-full flex flex-col ">
             <div id="top" className=" w-full lg:h-1/4 md:h-1/2 h-1/2 py-4 lg:pt-4 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex items-center lg:items-start ">
-              <motion.div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36" variants={scaleIn}>
+              <motion.div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-48 lg:h-w-48" variants={scaleIn}>
                 <Image src={Logo} alt="TVIS Logo" className="w-full h-full object-contain" />
               </motion.div>
             </div>

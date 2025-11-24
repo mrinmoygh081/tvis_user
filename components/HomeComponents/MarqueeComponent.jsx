@@ -3,12 +3,28 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const MarqueeComponent = () => {
-  const services = ["Reiki Healing", "Guided Meditations", "Past Life Regression"];
+  const services = [
+    "PLR (Past Life Regression)",
+    "Reiki Healing",
+    "Akashic Records",
+    "Life Between Life Therapy",
+    "Psychic Surgery",
+    "Inner Child Healing",
+    "Oracle Card Reading",
+    "Animal Telepathic Communication",
+    "EFT (Emotional Freedom Technique)",
+    "Ho'oponopono Master",
+    "Angelic Healing",
+    "Chakra Balancing",
+    "EMDR",
+    "Ancestor Healing",
+    "Family Constellations"
+  ];
 
   return (
-    <section className="w-full bg-[#e75f47] relative overflow-hidden">
-      <div className="py-8 md:py-10 overflow-hidden">
-        <Marquee speed={50} gradient={false} pauseOnHover={false} autoFill={true} className="marquee-seamless">
+    <section className="w-full bg-[#e75f47] relative overflow-x-clip overflow-y-hidden">
+      <div className="py-8 md:py-10 overflow-x-clip overflow-y-hidden">
+        <Marquee speed={50} gradient={false} pauseOnHover={false} autoFill={true} style={{ overflow: 'hidden' }}>
           {services.map((service, idx) => (
             <div key={idx} className="flex items-center justify-center whitespace-nowrap">
               <span className="font-quahon text-[#2d5016] text-2xl md:text-3xl lg:text-5xl font-medium leading-none">

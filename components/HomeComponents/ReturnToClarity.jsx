@@ -136,13 +136,13 @@ const ReturnToClarity = () => {
           </motion.h2>
 
           <motion.p
-            className="text-sm sm:text-base md:text-base leading-relaxed"
+            className="text-sm sm:text-base md:text-base leading-relaxed italic"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <strong className="italic">Smita Saha, is a professional certified "Psychic Energy Healing Therapist and a Reiki Grandmaster",</strong> based out of Bangalore, India.
+            Smita Saha, <strong className="italic">is a professional certified "Psychic Energy Healing Therapist and a Reiki Grandmaster"</strong>, based out of Bangalore, India.
           </motion.p>
 
           <motion.p
@@ -158,7 +158,7 @@ const ReturnToClarity = () => {
           </motion.p>
 
           <motion.p
-            className="mt-2 text-sm sm:text-base md:text-base leading-relaxed"
+            className="mt-2 text-sm sm:text-base md:text-base leading-relaxed italic"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
@@ -166,21 +166,18 @@ const ReturnToClarity = () => {
           >
             With a profound connection to the unseen realms, I practise and offer transformative healing experiences through various healing modalities like{" "}
             <strong className="italic">
-              PLR (Past Life Regression), Reiki Healing, Akashic Records, Life Between Life Therapist, Psychic Surgery, Inner Child Healing, Oracle Card Reading, Animal Telepathic
-              Communication, EFT (Emotional Freedom Technique)
+              PLR (Past Life Regression), Reiki Healing, Akashic Records, Life Between Life Therapist, Psycic Surgery, Inner Child Healing, Oracle Card Reading, Animal Telepathic Communication, EFT (Emotional Freedom Technique), and Ho'oponopono Master. She also offer Angelic Healing, Chakra Balancing, EMDR, Ancestor Healing, and Family Constellations.
             </strong>
-            , and Ho'oponopono Master. I also offer Angelic Healing, Chakra Balancing, EMDR, Ancestor Healing, and Family Constellations.
           </motion.p>
 
           <motion.p
-            className="mt-2 text-sm sm:text-base md:text-base leading-relaxed"
+            className="mt-2 text-sm sm:text-base md:text-base leading-relaxed italic"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            <strong className="font-semibold">With more than 800+ client sessions and 14+ healing modalities,</strong> I continue to serve people with a compassionate and
-            personalised approach, helping them to step into their fullest potential and live a life filled with purpose, love, and light.
+            <strong className="italic">With more than 800+ client sessions and 14+ healing modalities,</strong> I continue to serve people with a compassionate and personalised approach, helping them to step into their fullest potential and live a life filled with purpose, love, and light.
           </motion.p>
 
           <motion.p
@@ -206,13 +203,13 @@ const ReturnToClarity = () => {
           </motion.p>
 
           <motion.p
-            className="mt-6 italic font-semibold text-sm sm:text-base md:text-base"
+            className="mt-6 text-sm sm:text-base md:text-base"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            Discover the Healing Light within, with me.
+            <strong className="italic">Discover the Healing Light within, with me.</strong>
           </motion.p>
         </div>
       </motion.div>

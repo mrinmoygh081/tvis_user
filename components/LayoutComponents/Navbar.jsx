@@ -60,7 +60,7 @@ const Navbar = () => {
       {/* Desktop Navigation Bar */}
       <div
         className={`hidden lg:flex items-stretch border border-[#2d5016] rounded-full overflow-hidden transition-all duration-300 ${
-          isScrolled ? "backdrop-blur-md bg-white/15" : "bg-transparent"
+          isScrolled ? "backdrop-blur-md bg-[#2d5016]/15" : "bg-transparent"
         }`}
       >
         {/* Navigation Links */}
@@ -71,7 +71,7 @@ const Navbar = () => {
               <Link
                 href={item.href}
                 className={`px-5 py-3 font-sans uppercase text-sm font-semibold tracking-wide transition-all duration-200 text-[#2d5016] ${
-                  active ? "bg-[#e75f47] text-white hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
+                  active ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
                 }`}
               >
                 {item.label}
@@ -88,7 +88,7 @@ const Navbar = () => {
         <Link
           href="/schedule"
           className={`px-5 py-3 font-sans uppercase text-sm font-semibold tracking-wide transition-all duration-200 rounded-r-full text-[#2d5016] ${
-            isActive("/schedule") ? "bg-[#e75f47] text-white hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
+            isActive("/schedule") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
           }`}
         >
           SCHEDULE SESSION
@@ -130,7 +130,7 @@ const Navbar = () => {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`w-full max-w-xs px-6 py-4 font-sans uppercase text-base font-semibold tracking-wide text-center rounded-full border-2 border-[#2d5016] transition-all duration-200 ${
-                  active ? "bg-[#e75f47] text-white hover:bg-[#ff5252]" : "bg-transparent text-[#2d5016] hover:bg-[#e8e3d8]"
+                  active ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent text-[#2d5016] hover:bg-[#e8e3d8]"
                 }`}
               >
                 {item.label}
@@ -143,7 +143,7 @@ const Navbar = () => {
             href="/schedule"
             onClick={() => setIsMenuOpen(false)}
             className={`w-full max-w-xs px-6 py-4 font-sans uppercase text-base font-semibold tracking-wide text-center rounded-full border-2 border-[#2d5016] transition-all duration-200 ${
-              isActive("/schedule") ? "bg-[#e75f47] text-white hover:bg-[#ff5252]" : "bg-transparent text-[#2d5016] hover:bg-[#e8e3d8]"
+              isActive("/schedule") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent text-[#2d5016] hover:bg-[#e8e3d8]"
             }`}
           >
             SCHEDULE SESSION

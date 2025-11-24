@@ -96,7 +96,7 @@ const GiftOfLight = () => {
 
       {/* CONTENT WRAPPER */}
       <motion.div 
-        className="relative z-10 w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-end px-4 sm:px-6 md:px-8 lg:px-20 py-0 lg:py-0"
+        className="relative z-10 container mx-auto h-full flex flex-col lg:flex-row items-center justify-center lg:justify-end px-4 sm:px-6 md:px-8 lg:px-20 py-0 lg:py-0 "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
