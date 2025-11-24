@@ -52,7 +52,7 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="w-full p-0 bg-[#173c2c] text-[#dcae59]"
+      className="w-full p-0 bg-[#173c2c] text-[#d5c2a0]"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -61,7 +61,7 @@ const Footer = () => {
       <div className="grid grid-cols-3 gap-0 min-h-[400px]" style={{ gridTemplateRows: "1fr 1fr auto" }}>
         {/* div1 - Bottom row (spans all columns) */}
         <motion.div 
-          className="col-span-3 row-start-3 row-end-4 py-3 flex items-center justify-center border-t border-[#dcae59]"
+          className="col-span-3 row-start-3 row-end-4 py-3 flex items-center justify-center border-t border-[#d5c2a0]"
           variants={itemVariants}
         >
           <p className="font-sans text-base text-center">©2026 by TVIS. All Rights Reserved</p>
@@ -81,7 +81,7 @@ const Footer = () => {
 
         {/* div3 - Row 1, Column 2 (Navigation Links) */}
         <motion.div 
-          className="col-start-2 col-end-3 row-start-1 row-end-2 p-4 text-end flex flex-col border-l border-r border-[#dcae59]"
+          className="col-start-2 col-end-3 row-start-1 row-end-2 p-4 text-end flex flex-col border-l border-r border-[#d5c2a0]"
           variants={itemVariants}
         >
           {footerLinks.navigation.map((link) => (
@@ -107,7 +107,7 @@ const Footer = () => {
 
         {/* div5 - Row 2, Column 1 (Logo area - divided by 3) */}
         <motion.div 
-          className="col-start-1 col-end-2 row-start-2 row-end-3 p-0 border-t border-[#dcae59]"
+          className="col-start-1 col-end-2 row-start-2 row-end-3 p-0 border-t border-[#d5c2a0]"
           variants={itemVariants}
         >
           <div className="flex h-full">
@@ -116,7 +116,7 @@ const Footer = () => {
 
             {/* Part 2 - Logo */}
             <div className="flex items-center justify-center flex-1">
-              <h2 className="text-4xl md:text-5xl font-serif tracking-wide text-[#dcae59]">-TVIS-</h2>
+              <h2 className="text-4xl md:text-7xl font-serif tracking-wide text-[#d5c2a0]">~TVIS~</h2>
             </div>
 
             {/* Part 3 - Empty */}
@@ -126,7 +126,7 @@ const Footer = () => {
 
         {/* div6 - Row 2, Columns 2-3 (Address) */}
         <motion.div 
-          className="col-start-2 col-end-4 row-start-2 row-end-3 p-4 text-start border-l border-t border-[#dcae59]"
+          className="col-start-2 col-end-4 row-start-2 row-end-3 p-4 text-start border-l border-t border-[#d5c2a0]"
           variants={itemVariants}
         >
           <div className="flex flex-col justify-center h-full">
@@ -137,7 +137,7 @@ const Footer = () => {
 
         {/* div7 - Horizontal divider between rows (spans all columns) */}
         <motion.div 
-          className="col-span-3 row-start-2 row-end-3 p-0 h-px bg-[#dcae59] z-10"
+          className="col-span-3 row-start-2 row-end-3 p-0 h-px bg-[#d5c2a0] z-10"
           variants={itemVariants}
         ></motion.div>
       </div>
