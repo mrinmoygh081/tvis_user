@@ -50,3 +50,7 @@ body.lenis-ready {
 .font-quahon {
   font-family: var(--font-quahon), sans-serif;
 }
+
+.font-marcellus {
+  font-family: var(--font-marcellus), serif;
+}

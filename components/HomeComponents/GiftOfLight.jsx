@@ -3,10 +3,35 @@
 import React from "react";
 import Image from "next/image";
 import yelloWbg from "../../public/asset/images/GiftOfLightBG.jpg";
+import icon1 from "../../public/asset/ICONS/ICONS/a.png";
+import icon2 from "../../public/asset/ICONS/ICONS/b.png";
+import icon3 from "../../public/asset/ICONS/ICONS/c.png";
 
-import { Circle, Droplet, Sparkles } from "lucide-react";
 
+
+
+
+
+import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+
+const features = [
+  {
+    icon: icon1,
+    label: "AA+ GRADE\nSOY WAX",
+    delay: 0.3,
+  },
+  {
+    icon: icon2,
+    label: "100% NATURAL\nESSENTIAL OILS",
+    delay: 0.4,
+  },
+  {
+    icon: icon3,
+    label: "NATURAL HEALING\nCRYSTALS",
+    delay: 0.5,
+  },
+];
 
 const GiftOfLight = () => {
   const containerVariants = {
@@ -117,7 +142,7 @@ const GiftOfLight = () => {
           {/* Heading */}
           <div className="overflow-hidden">
             <motion.h2 
-              className="text-3xl md:text-3xl lg:text-4xl  text-[#244a37] font-quahon leading-tight"
+              className="text-3xl md:text-3xl lg:text-4xl  text-[#244a37] font-marcellus leading-tight"
               variants={elegantTextVariants}
             >
               "A Gift Of Light That Heals"
@@ -134,122 +159,49 @@ const GiftOfLight = () => {
 
           {/* FEATURES */}
           <div className="mt-12 flex flex-wrap justify-evenly gap-10  items-center">
-            {/* Feature 1 */}
-            <motion.div 
-              className="flex flex-col items-center cursor-pointer" 
-              variants={featureVariants}
-              whileHover="hover"
-            >
+            {features.map((feature, index) => (
               <motion.div 
-                className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl shadow-md"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
-                variants={{
-                  hidden: { scale: 0, rotate: -180 },
-                  visible: {
-                    scale: 1,
-                    rotate: 0,
-                    transition: {
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15,
-                      delay: 0.3,
-                    },
-                  },
-                }}
-                whileHover={{ 
-                  scale: 1.15,
-                  boxShadow: "0 0 25px rgba(36, 74, 55, 0.8), 0 0 50px rgba(36, 74, 55, 0.4)",
-                }}
-                transition={{ duration: 0.3 }}
+                key={index}
+                className="flex flex-col items-center cursor-pointer" 
+                variants={featureVariants}
+                whileHover="hover"
               >
-                <Circle className="w-7 h-7" />
-              </motion.div>
-              <p className="mt-3 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center">
-                AA+ GRADE
-                <br />
-                SOY WAX
-              </p>
-            </motion.div>
-
-            {/* Feature 2 */}
-            <motion.div 
-              className="flex flex-col items-center cursor-pointer" 
-              variants={featureVariants}
-              whileHover="hover"
-            >
-              <motion.div 
-                className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl shadow-md"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
-                variants={{
-                  hidden: { scale: 0, rotate: -180 },
-                  visible: {
-                    scale: 1,
-                    rotate: 0,
-                    transition: {
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15,
-                      delay: 0.4,
+                <motion.div 
+                  className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.5 }}
+                  variants={{
+                    hidden: { scale: 0, rotate: -180 },
+                    visible: {
+                      scale: 1,
+                      rotate: 0,
+                      transition: {
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
+                        delay: feature.delay,
+                      },
                     },
-                  },
-                }}
-                whileHover={{ 
-                  scale: 1.15,
-                  boxShadow: "0 0 25px rgba(36, 74, 55, 0.8), 0 0 50px rgba(36, 74, 55, 0.4)",
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <Droplet className="w-7 h-7" />
+                  }}
+                  whileHover={{ 
+                    scale: 1.15,
+                    filter: "drop-shadow(0 0 20px rgba(36, 74, 55, 0.8)) drop-shadow(0 0 40px rgba(36, 74, 55, 0.4))",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image 
+                    src={feature.icon} 
+                    alt="" 
+                    className="w-full h-full object-contain"
+                    aria-hidden="true"
+                  />
+                </motion.div>
+                <p className="-mt-2 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center whitespace-pre-line">
+                  {feature.label}
+                </p>
               </motion.div>
-              <p className="mt-3 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center">
-                100% NATURAL
-                <br />
-                ESSENTIAL OILS
-              </p>
-            </motion.div>
-
-            {/* Feature 3 */}
-            <motion.div 
-              className="flex flex-col items-center cursor-pointer" 
-              variants={featureVariants}
-              whileHover="hover"
-            >
-              <motion.div 
-                className="w-14 h-14 rounded-full bg-[#244a37] flex items-center justify-center text-[#d5dacd] text-2xl shadow-md"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.5 }}
-                variants={{
-                  hidden: { scale: 0, rotate: -180 },
-                  visible: {
-                    scale: 1,
-                    rotate: 0,
-                    transition: {
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15,
-                      delay: 0.5,
-                    },
-                  },
-                }}
-                whileHover={{ 
-                  scale: 1.15,
-                  boxShadow: "0 0 25px rgba(36, 74, 55, 0.8), 0 0 50px rgba(36, 74, 55, 0.4)",
-                }}
-                transition={{ duration: 0.3 }}
-              >
-                <Sparkles className="w-7 h-7" />
-              </motion.div>
-              <p className="mt-3 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center">
-                NATURAL HEALING
-                <br />
-                CRYSTALS
-              </p>
-            </motion.div>
+            ))}
           </div>
 
           {/* BUTTON */}

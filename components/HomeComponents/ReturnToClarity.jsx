@@ -126,7 +126,7 @@ const ReturnToClarity = () => {
         {/* RIGHT */}
         <div ref={rightColumnRef} className="w-full md:w-3/5 mt-8 md:mt-0 md:pl-8 lg:pl-12 flex flex-col justify-start">
           <motion.h2
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-quahon font-semibold mb-3"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-marcellus  mb-3"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}

@@ -79,7 +79,7 @@ const HeroSection = () => {
                 {/* Main Heading */}
                 <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-center items-center md:items-start ">
                   <motion.h1
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-quahon text-[#2d4a47] leading-tight text-center md:text-left"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-marcellus text-[#2d4a47] leading-tight text-center md:text-left"
                     variants={fadeUp}
                     custom={0.3}
                   >
@@ -120,7 +120,7 @@ const HeroSection = () => {
               >
                 <div className="w-full sm:w-4/5 lg:w-4/5 flex flex-col sm:flex-row">
                   <div className="w-full sm:w-3/4 lg:w-3/4 h-full flex justify-center sm:justify-start lg:justify-center items-center py-4 sm:py-0">
-                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#2d4a47] font-quahon text-center sm:text-left lg:text-center">
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#2d4a47] font-marcellus text-center sm:text-left lg:text-center">
                       Energy Healing <br /> with <span className="font-laluxes text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">Smita Saha</span>
                     </p>
                   </div>

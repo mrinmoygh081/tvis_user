@@ -72,9 +72,9 @@ const Footer = () => {
           className="col-start-1 col-end-2 row-start-1 row-end-2  flex flex-col items-center md:items-end md:text-end   justify-end px-4 mb-2"
           variants={itemVariants}
         >
-          <h3 className="font-sans text-base font-medium">Contact me</h3>
+          <h3 className="font-sans text-base font-medium font-marcellus">Contact me</h3>
           
-          <h3 href="mailto:smita@tvisworld.com" className="font-sans text-sm hover:opacity-80 transition-opacity">
+          <h3 href="mailto:smita@tvisworld.com" className="font-sans text-xs md:text-base hover:opacity-80 transition-opacity font-marcellus">
             smita@tvisworld.com
           </h3>
         </motion.div>
@@ -116,7 +116,7 @@ const Footer = () => {
 
             {/* Part 2 - Logo */}
             <div className="flex items-center justify-center flex-1">
-              <h2 className="text-4xl md:text-7xl font-serif tracking-wide text-[#d5c2a0]">~TVIS~</h2>
+              <h2 className="text-4xl md:text-7xl font-marcellus tracking-wide text-[#d5c2a0]">~TVIS~</h2>
             </div>
 
             {/* Part 3 - Empty */}

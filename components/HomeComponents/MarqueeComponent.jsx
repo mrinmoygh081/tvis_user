@@ -27,7 +27,7 @@ const MarqueeComponent = () => {
         <Marquee speed={50} gradient={false} pauseOnHover={false} autoFill={true} style={{ overflow: 'hidden' }}>
           {services.map((service, idx) => (
             <div key={idx} className="flex items-center justify-center whitespace-nowrap">
-              <span className="font-quahon text-[#2d5016] text-2xl md:text-3xl lg:text-5xl font-medium leading-none">
+              <span className="font-marcellus text-[#2d5016] text-2xl md:text-3xl lg:text-5xl font-medium leading-none">
                 {service}
               </span>
 

@@ -21,6 +21,11 @@ const quahon = localFont({
   variable: "--font-quahon",
 });
 
+const marcellus = localFont({
+  src: [{ path: "./fonts/Marcellus-Regular.woff2", weight: "400", style: "normal" }],
+  variable: "--font-marcellus",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ overflowX: "hidden" }}>
-      <body className={`${laLuxes.variable} ${askha.variable} ${quahon.variable}  overflow-x-hidden`}>
+      <body className={`${laLuxes.variable} ${askha.variable} ${quahon.variable} ${marcellus.variable}  overflow-x-hidden`}>
 
         <SmoothScroll>
           <Navbar />

@@ -3,28 +3,32 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import greenBg from "../../public/asset/images/GreenBg2.png";
+import greenBg from "../../public/asset/images/GreenBg3.png";
+import icon1 from "../../public/asset/ICONS/ICONS/icon1.png";
+import icon2 from "../../public/asset/ICONS/ICONS/icon2.png";
+import icon3 from "../../public/asset/ICONS/ICONS/icon3.png";
+import icon4 from "../../public/asset/ICONS/ICONS/icon4.png";
 
 const services = [
   {
     title: "Reiki Healing",
     desc: "Neque porro quisquam est quilo wesmonas feltori, consectetur, adipisci velit dolorem ipsum quia dolor sit amet.",
-    icon: "drop",
+    icon: icon1,
   },
   {
     title: "Past Life Regression",
     desc: "Neque porro quisquam est quilo wesmonas feltori, consectetur, adipisci velit dolorem ipsum quia dolor sit amet.",
-    icon: "cup",
+    icon: icon2,
   },
   {
     title: "Akashik Records",
     desc: "Neque porro quisquam est quilo wesmonas feltori, consectetur, adipisci velit dolorem ipsum quia dolor sit amet.",
-    icon: "spiral",
+    icon: icon3,
   },
   {
     title: "Inner Child Healing",
     desc: "Neque porro quisquam est quilo wesmonas feltori, consectetur, adipisci velit dolorem ipsum quia dolor sit amet.",
-    icon: "sun",
+    icon: icon4,
   },
 ];
 
@@ -78,67 +82,10 @@ export default function HealingServices() {
     },
   };
 
-  // Icon Path Drawing Variants
-  const pathVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        duration: 1.5,
-        ease: "easeInOut",
-      },
-    },
-  };
 
-  // Updated Icon Component with motion.path
-  const Icon = ({ name }) => {
-    const size = 24; // Slightly larger for better visibility
-    const commonProps = {
-      stroke: "currentColor",
-      strokeWidth: "1.6",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      variants: pathVariants,
-      initial: "hidden",
-      whileInView: "visible",
-      viewport: { once: true },
-    };
-
-    switch (name) {
-      case "drop":
-        return (
-          <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none">
-            <motion.path d="M12 3s5 5 5 9a5 5 0 1 1-10 0c0-4 5-9 5-9z" {...commonProps} />
-          </svg>
-        );
-      case "cup":
-        return (
-          <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none">
-            <motion.path d="M3 7h14v5a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7z" {...commonProps} />
-            <motion.path d="M21 8v2a3 3 0 0 1-3 3" {...commonProps} transition={{ ...pathVariants.visible.transition, delay: 0.5 }} />
-          </svg>
-        );
-      case "spiral":
-        return (
-          <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none">
-            <motion.path d="M12 20a6 6 0 1 0 0-12 4 4 0 1 1 0 8" {...commonProps} />
-          </svg>
-        );
-      case "sun":
-        return (
-          <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none">
-            <motion.circle cx="12" cy="12" r="3" {...commonProps} variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } } }} />
-            <motion.path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" {...commonProps} transition={{ ...pathVariants.visible.transition, delay: 0.3 }} />
-          </svg>
-        );
-      default:
-        return null;
-    }
-  };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#123a30] text-[#e9f0ea]">
+    <section className="relative w-full overflow-hidden text-[#e9f0ea]">
       {/* decorative background */}
       <motion.div 
         className="absolute inset-0 z-0"
@@ -158,7 +105,7 @@ export default function HealingServices() {
       </motion.div>
 
       {/* content container */}
-      <div className="relative z-10 mx-auto container px-6 md:px-10 py-20 md:py-28 lg:py-36">
+      <div className="relative z-10 mx-auto container px-6 md:px-10 py-16 md:py-28 lg:py-28">
         {/* Title */}
         <motion.header 
           className="mb-10 md:mb-14 text-center"
@@ -167,7 +114,7 @@ export default function HealingServices() {
           viewport={{ once: true, amount: 0.5 }}
           variants={headerVariants}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif tracking-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-marcellus tracking-tight">
             <span className="mr-2">Reiki &amp; Other</span>
             <span className="inline-block  px-3 py-1 rounded-sm text-[#d7f0e5]">Healing Services</span>
           </h2>
@@ -196,26 +143,29 @@ export default function HealingServices() {
                     onHoverStart={() => setIsHovered(true)}
                     onHoverEnd={() => setIsHovered(false)}
                   >
-                    {/* icon badge */}
-                    <div className="flex-shrink-0">
-                      <motion.div 
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#e9f0ea] text-[#123a30] flex items-center justify-center shadow-sm"
-                        animate={isHovered ? { 
-                          scale: 1.15,
-                          boxShadow: "0 0 25px rgba(233, 240, 234, 0.8), 0 0 50px rgba(233, 240, 234, 0.4)",
-                        } : {
-                          scale: 1,
-                          boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-                        }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <Icon name={s.icon} />
-                      </motion.div>
-                    </div>
+                    {/* icon */}
+                    <motion.div 
+                      className="flex-shrink-0 w-16 h-16 md:w-28 md:h-28"
+                      animate={isHovered ? { 
+                        scale: 1.15,
+                        filter: "drop-shadow(0 0 20px rgba(233, 240, 234, 0.8)) drop-shadow(0 0 40px rgba(233, 240, 234, 0.4))",
+                      } : {
+                        scale: 1,
+                        filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))",
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Image 
+                        src={s.icon} 
+                        alt="" 
+                        className="w-full h-full object-contain"
+                        aria-hidden="true"
+                      />
+                    </motion.div>
 
                     {/* text */}
                     <div className="min-w-0">
-                      <h3 className="text-base md:text-lg font-semibold text-[#ff8f71] mb-2">{s.title}</h3>
+                      <h3 className="text-base md:text-lg font-semibold text-[#ff8f71] mb-2 font-marcellus">{s.title}</h3>
                       <p className="text-sm md:text-base leading-relaxed text-[#dfe9e3]">
                         {s.desc}
                       </p>

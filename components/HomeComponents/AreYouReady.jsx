@@ -101,7 +101,7 @@ const AreYouReady = () => {
         <div className="mx-auto w-full max-w-2xl">
           {/* Headline */}
           <motion.h2 
-            className="text-[#2d5016] text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6 font-quahon"
+            className="text-[#2d5016] text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6 font-marcellus"
             variants={itemVariants}
           >
             Are you ready for a soul-altering transformation?

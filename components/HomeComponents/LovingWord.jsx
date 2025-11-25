@@ -51,7 +51,7 @@ const LovingWord = () => {
 
         {/* Sub-heading */}
         <motion.h3 
-          className="font-askha text-[#2d5016] text-xl md:text-2xl lg:text-3xl mb-8 font-medium"
+          className="font-marcellus text-[#2d5016] text-xl md:text-2xl lg:text-3xl mb-8 font-medium"
           variants={blurVariants}
         >
           We have blossomed to new heights
