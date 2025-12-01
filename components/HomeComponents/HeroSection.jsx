@@ -77,7 +77,7 @@ const HeroSection = () => {
                 custom={0.2}
               >
                 {/* Main Heading */}
-                <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-center items-center md:items-start ">
+                <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-center  items-center md:items-start ">
                   <motion.h1
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-marcellus text-[#2d4a47] leading-tight text-center md:text-left"
                     variants={fadeUp}
@@ -151,7 +151,7 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            <motion.div id="text" className="lg:h-1/6 w-full flex items-center justify-center lg:justify-start pt-0 sm:pt-0 lg:pt-0">
+            <motion.div id="text" className="lg:h-1/6 w-full flex items-center lg:items-start justify-center lg:justify-start pt-0 sm:pt-0 lg:pt-5 ">
               <div className="text-center lg:text-center w-full lg:w-[80%] px-2 lg:px-0">
                 <p className="text-xs sm:text-sm text-[#2d4a47] uppercase tracking-widest font-semibold">Energy Healer • Mentor • Soul Coach • Mystic Teacher</p>
               </div>

@@ -69,7 +69,7 @@ const Footer = () => {
 
         {/* div2 - Row 1, Column 1 (Contact) */}
         <motion.div 
-          className="col-start-1 col-end-2 row-start-1 row-end-2  flex flex-col items-center md:items-end md:text-end   justify-end px-4 mb-2"
+          className="col-start-1 col-end-2 row-start-1 row-end-2  flex flex-col items-center md:items-end md:text-end   justify-end px-4 mb-4"
           variants={itemVariants}
         >
           <h3 className="font-sans text-base font-medium font-marcellus">Contact me</h3>
@@ -81,7 +81,7 @@ const Footer = () => {
 
         {/* div3 - Row 1, Column 2 (Navigation Links) */}
         <motion.div 
-          className="col-start-2 col-end-3 row-start-1 row-end-2 p-4 text-end flex flex-col border-l border-r border-[#d5c2a0]"
+          className="col-start-2 col-end-3 row-start-1 row-end-2 p-4 text-end  flex flex-col border-l border-r border-[#d5c2a0] justify-end"
           variants={itemVariants}
         >
           {footerLinks.navigation.map((link) => (
@@ -93,7 +93,7 @@ const Footer = () => {
 
         {/* div4 - Row 1, Column 3 (Policy Links) */}
         <motion.div 
-          className="col-start-3 col-end-4 row-start-1 row-end-2 p-4 text-start flex flex-col"
+          className="col-start-3 col-end-4 row-start-1 row-end-2 p-4 text-start flex flex-col justify-end"
           variants={itemVariants}
         >
           {footerLinks.policies.map((link, index) => (
