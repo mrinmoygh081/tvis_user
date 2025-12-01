@@ -77,7 +77,7 @@ const HeroSection = () => {
                 custom={0.2}
               >
                 {/* Main Heading */}
-                <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-center  items-center md:items-start ">
+                <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-center  items-center md:items-start bg-green-400">
                   <motion.h1
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-marcellus text-[#2d4a47] leading-tight text-center md:text-left"
                     variants={fadeUp}
@@ -114,11 +114,11 @@ const HeroSection = () => {
               </motion.div>
               <motion.div
                 id="images"
-                className="lg:h-2/5 w-full flex flex-col sm:flex-row pl-4 sm:pl-6 md:pl-8 lg:pl-6 pt-6 sm:pt-0 lg:pt-0 gap-6 sm:gap-0"
+                className="lg:h-2/5 w-full flex flex-col sm:flex-row pl-4 sm:pl-6 md:pl-8 lg:pl-6 pt-6 sm:pt-0 lg:pt-0 gap-6 sm:gap-0 bg-amber-600"
                 variants={fadeUp}
                 custom={0.6}
               >
-                <div className="w-full sm:w-4/5 lg:w-4/5 flex flex-col sm:flex-row">
+                <div className="w-full sm:w-4/5 lg:w-4/5 flex flex-col sm:flex-row bg-red-600">
                   <div className="w-full sm:w-3/4 lg:w-3/4 h-full flex justify-center sm:justify-start lg:justify-center items-center py-4 sm:py-0">
                     <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#2d4a47] font-marcellus text-center sm:text-left lg:text-center">
                       Energy Healing <br /> with <span className="font-laluxes text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">Smita Saha</span>
