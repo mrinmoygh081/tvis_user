@@ -63,61 +63,33 @@ const AreYouReady = () => {
       {/* Left Column - Image with Shutter Reveal */}
       <div className="w-full lg:w-[40%] h-[50vh] md:h-[60vh] lg:h-auto relative overflow-hidden">
         {/* Shutter Overlay */}
-        <motion.div 
-          className="absolute inset-0 z-20 bg-[#d4d9c4]"
-          variants={shutterVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-        />
-        
+        <motion.div className="absolute inset-0 z-20 bg-[#d4d9c4]" variants={shutterVariants} initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }} />
+
         {/* Video with Scale Effect */}
-        <motion.div 
-          className="relative w-full h-full"
-          variants={imageScaleVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-        >
-          <video 
-            src="/asset/video/contactImg.mp4"
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+        <motion.div className="relative w-full h-full" variants={imageScaleVariants} initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.3 }}>
+          <video src="/asset/video/contactImg.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
         </motion.div>
       </div>
 
       {/* Right Column - Form with 3D Perspective Entrance */}
-      <motion.div 
+      <motion.div
         className="w-full lg:w-[60%] bg-[#d4d9c4] flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 py-8 sm:py-10 md:py-12 lg:py-0"
         variants={formContainerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
       >
-        <div className="mx-auto w-full max-w-2xl">
+        <div className="mx-auto w-full max-w-2xl py-10">
           {/* Headline */}
-          <motion.h2 
-            className="text-[#2d5016] text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6 font-marcellus"
-            variants={itemVariants}
-          >
+          <motion.h2 className="text-[#2d5016] text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6 font-marcellus" variants={itemVariants}>
             Are you ready for a soul-altering transformation?
           </motion.h2>
 
           {/* Sub-headlines */}
-          <motion.p 
-            className="text-[#2d5016] font-sans text-sm sm:text-base md:text-lg italic mb-2"
-            variants={itemVariants}
-          >
+          <motion.p className="text-[#2d5016] font-sans text-sm sm:text-base md:text-lg italic mb-2" variants={itemVariants}>
             This is the sign from the Universe you have been waiting for...
           </motion.p>
-          <motion.p 
-            className="text-[#2d5016] font-sans text-sm sm:text-base md:text-lg italic mb-6 sm:mb-8"
-            variants={itemVariants}
-          >
+          <motion.p className="text-[#2d5016] font-sans text-sm sm:text-base md:text-lg italic mb-6 sm:mb-8" variants={itemVariants}>
             All you need to do is say YES TO YOU!
           </motion.p>
 

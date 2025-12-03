@@ -86,9 +86,9 @@ const Navbar = () => {
 
         {/* Call-to-Action Button */}
         <Link
-          href="/schedule"
+          href="/contact"
           className={`px-5 py-3 font-sans uppercase text-sm font-semibold tracking-wide transition-all duration-200 rounded-r-full text-[#2d5016] ${
-            isActive("/schedule") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
+            isActive("/contact") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
           }`}
         >
           SCHEDULE SESSION
