@@ -82,38 +82,17 @@ export default function HealingServices() {
     },
   };
 
-
-
   return (
-    <section className="relative w-full overflow-hidden text-[#e9f0ea]">
+    <section className="relative w-full overflow-hidden text-[#e9f0ea] bg-[#173c2b]">
       {/* decorative background */}
-      <motion.div 
-        className="absolute inset-0 z-0"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={bgVariants}
-      >
-        <Image
-          src={greenBg}
-          alt="Decorative background"
-          fill
-          priority
-          className="object-cover object-right-bottom opacity-100"
-          sizes="100vw"
-        />
+      <motion.div className="absolute inset-0 z-0" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={bgVariants}>
+        <Image src={greenBg} alt="Decorative background" fill priority className="object-cover object-right-bottom opacity-100" sizes="100vw" />
       </motion.div>
 
       {/* content container */}
       <div className="relative z-10 mx-auto container px-6 md:px-10 py-16 md:py-28 lg:py-28">
         {/* Title */}
-        <motion.header 
-          className="mb-10 md:mb-14 text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={headerVariants}
-        >
+        <motion.header className="mb-10 md:mb-14 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={headerVariants}>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-marcellus tracking-tight">
             <span className="mr-2">Reiki &amp; Other</span>
             <span className="inline-block  px-3 py-1 rounded-sm text-[#d7f0e5]">Healing Services</span>
@@ -125,54 +104,31 @@ export default function HealingServices() {
           {/* left column (services) */}
           <div className="md:w-3/5">
             <ul className="space-y-8">
-              {services.map((s, i) => {
-                const [isHovered, setIsHovered] = React.useState(false);
-                
-                return (
-                  <motion.li 
-                    key={s.title} 
-                    className="flex items-start gap-6 md:gap-8 p-4 rounded-xl transition-all duration-300 hover:bg-[#1a4d40]/40 cursor-default border border-transparent hover:border-[#e9f0ea]/20 hover:shadow-lg"
-                    initial={{ opacity: 0, y: 40, x: -20 }}
-                    whileInView={{ opacity: 1, y: 0, x: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: i * 0.05,
-                      ease: [0.25, 0.1, 0.25, 1],
-                    }}
-                    onHoverStart={() => setIsHovered(true)}
-                    onHoverEnd={() => setIsHovered(false)}
-                  >
-                    {/* icon */}
-                    <motion.div 
-                      className="flex-shrink-0 w-16 h-16 md:w-28 md:h-28"
-                      animate={isHovered ? { 
-                        scale: 1.15,
-                        filter: "drop-shadow(0 0 20px rgba(233, 240, 234, 0.8)) drop-shadow(0 0 40px rgba(233, 240, 234, 0.4))",
-                      } : {
-                        scale: 1,
-                        filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))",
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Image 
-                        src={s.icon} 
-                        alt="" 
-                        className="w-full h-full object-contain"
-                        aria-hidden="true"
-                      />
-                    </motion.div>
+              {services.map((s, i) => (
+                <motion.li
+                  key={s.title}
+                  className="flex items-start gap-6 md:gap-8 p-4 rounded-xl transition-all duration-300 hover:bg-[#1a4d40]/40 cursor-default border border-transparent hover:border-[#e9f0ea]/20 hover:shadow-lg service_item"
+                  initial={{ opacity: 0, y: 40, x: -20 }}
+                  whileInView={{ opacity: 1, y: 0, x: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: i * 0.05,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                >
+                  {/* icon */}
+                  <motion.div className="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 service_item_icon">
+                    <Image src={s.icon} alt="" className="w-full h-full object-contain" aria-hidden="true" />
+                  </motion.div>
 
-                    {/* text */}
-                    <div className="min-w-0">
-                      <h3 className="text-base md:text-lg font-semibold text-[#ff8f71] mb-2 font-marcellus">{s.title}</h3>
-                      <p className="text-sm md:text-base leading-relaxed text-[#dfe9e3]">
-                        {s.desc}
-                      </p>
-                    </div>
-                  </motion.li>
-                );
-              })}
+                  {/* text */}
+                  <div className="min-w-0">
+                    <h3 className="text-base md:text-lg font-semibold text-[#ff8f71] mb-2 font-marcellus">{s.title}</h3>
+                    <p className="text-sm md:text-base leading-relaxed text-[#dfe9e3]">{s.desc}</p>
+                  </div>
+                </motion.li>
+              ))}
             </ul>
           </div>
 

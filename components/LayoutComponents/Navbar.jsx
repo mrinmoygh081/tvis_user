@@ -12,8 +12,8 @@ const Navbar = () => {
     { label: "HOME", href: "/" },
     { label: "ABOUT US", href: "/about" },
     { label: "SERVICES", href: "/services" },
-    { label: "SHOP", href: "/shop" },
-    { label: "BLOG", href: "/blog" },
+    // { label: "SHOP", href: "/shop" },
+    // { label: "BLOG", href: "/blog" },
   ];
 
   // Handle scroll event to add blur effect
@@ -71,7 +71,7 @@ const Navbar = () => {
               <Link
                 href={item.href}
                 className={`px-5 py-3 font-sans uppercase text-sm font-semibold tracking-wide transition-all duration-200 text-[#2d5016] ${
-                  active ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
+                  active ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-[#f5f1e8] hover:bg-[#dddddd]"
                 }`}
               >
                 {item.label}
@@ -88,7 +88,7 @@ const Navbar = () => {
         <Link
           href="/contact"
           className={`px-5 py-3 font-sans uppercase text-sm font-semibold tracking-wide transition-all duration-200 rounded-r-full text-[#2d5016] ${
-            isActive("/contact") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent hover:bg-[#f5f1e8]"
+            isActive("/contact") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-[#f5f1e8] hover:bg-[#dddddd]"
           }`}
         >
           SCHEDULE SESSION

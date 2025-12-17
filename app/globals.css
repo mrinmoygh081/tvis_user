@@ -54,3 +54,8 @@ body.lenis-ready {
 .font-marcellus {
   font-family: var(--font-marcellus), serif;
 }
+.service_item:hover .service_item_icon {
+  scale: 1.15;
+  filter: drop-shadow(0 0 20px rgba(233, 240, 234, 0.8)) drop-shadow(0 0 40px rgba(233, 240, 234, 0.4));
+  transition: all 0.3s ease;
+}
