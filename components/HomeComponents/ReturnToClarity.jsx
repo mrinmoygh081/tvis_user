@@ -49,7 +49,7 @@ const ReturnToClarity = () => {
   return (
     <section ref={sectionRef} className="bg-[#d5dacd] text-[#244a37] relative z-10 ">
       <motion.div
-        className="mx-auto w-full lg:max-w-[1400px] px-6 md:px-10 py-10 md:py-10 min-h-screen flex flex-col md:flex-row justify-center items-center"
+        className="mx-auto w-full lg:max-w-350 px-6 md:px-10 py-10 md:py-10 min-h-screen flex flex-col md:flex-row justify-center items-center"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
