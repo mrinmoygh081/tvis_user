@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/autoplay";
+
 * {
   box-sizing: border-box;
 }
@@ -136,4 +140,25 @@ body.lenis-ready {
 .scrollTop img {
   width: 20px;
   transform: rotate(180deg);
+}
+
+.testimonial-swiper {
+  padding-bottom: 60px; /* space for dots */
+  position: relative;
+}
+
+.testimonial-swiper .swiper-pagination {
+  bottom: 0px !important;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: #ff8a80;
+  opacity: 0.4;
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
 }
