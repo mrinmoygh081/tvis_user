@@ -109,3 +109,31 @@ body.lenis-ready {
   box-shadow: none;
   border: none;
 }
+
+.scrollTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: #000;
+  background-color: #e75f47;
+  border-radius: 50%;
+  /* height: 80px; */
+  width: 80px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 99999999;
+  border: none;
+  transition: all 0.7s ease-in-out;
+  transform: translateX(0);
+  padding: 10px;
+}
+.scrollTop.active {
+  transform: translateX(200px);
+}
+.scrollTop img {
+  width: 20px;
+  transform: rotate(180deg);
+}

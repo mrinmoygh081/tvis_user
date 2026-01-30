@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import SmoothScroll from "../components/SmoothScroll";
 import Navbar from "@/components/LayoutComponents/Navbar";
 import Footer from "@/components/LayoutComponents/Footer";
+import ScrollTop from "@/components/ScrollTop";
 
 const laLuxes = localFont({
   src: [{ path: "./fonts/LaLuxesScript-Regular.woff2", weight: "400", style: "normal" }],
@@ -43,6 +44,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <ScrollTop />
         </SmoothScroll>
       </body>
     </html>
