@@ -1,3 +1,26 @@
+export const servicesHome = [
+  {
+    title: "REIKI Healing",
+    desc: "Reiki is a holistic energy healing therapy that helps calm the mind, release emotional stress and support physical well being. In this technique the Universal Life Energy is being channelled through the healers hands to support the body’s natural healing processes.",
+    icon: "icon1.png",
+  },
+  {
+    title: "PAST LIFE REGRESSION",
+    desc: "Past Life Regression is a soul-guided journey that explores experiences carried across lifetimes. Through a deeply relaxed meditative state, you may access memories, emotions, or symbolic images connected to your soul’s journey. These experiences can help illuminate karmic patterns, relationships, fears, or emotional blocks, allowing healing, understanding, and transformation to occur. Each session is guided with care, compassion, and intention, creating a safe space for inner exploration and spiritual healing.",
+    icon: "icon2.png",
+  },
+  {
+    title: "PSYCHIC SURGERY",
+    desc: "Psychic Surgery is a spiritual energy healing practice that works on to remove energetic blockages, emotional imprints, Organ’s  illness or limiting patterns that may be affecting well-being. This healing is performed without physical touch or medical intervention. Through focused intention and spiritual guidance, the work is done within the energy field and physical body to support release, balance, and restoration. Clients often describe feelings of lightness, relief, clarity, and renewed energy following a session.",
+    icon: "icon3.png",
+  },
+  {
+    title: "LIFE BETWEEN LIFE",
+    desc: "Life Between Lives Healing offers a sacred journey into the soul’s home between incarnations. In this expanded state of awareness, you may reconnect with your soul essence, receive guidance from higher beings, and gain insight into your soul’s lessons, contracts, and purpose. This experience supports profound emotional healing, spiritual awakening, and a sense of peace and alignment.",
+    icon: "icon4.png",
+  },
+];
+
 export const servicesFAQs = [
   {
     q: "REIKI - Reiki is a holistic healing therapy that restores balance across mind, body, and emotions. Universal life energy is channelled through the therapists hands to activate the body’s innate healing ability.",

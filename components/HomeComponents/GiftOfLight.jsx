@@ -7,11 +7,6 @@ import icon1 from "../../public/asset/ICONS/ICONS/a.png";
 import icon2 from "../../public/asset/ICONS/ICONS/b.png";
 import icon3 from "../../public/asset/ICONS/ICONS/c.png";
 
-
-
-
-
-
 import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -47,10 +42,10 @@ const GiftOfLight = () => {
 
   // Soft Ethereal Zoom for Image
   const imageVariants = {
-    hidden: { 
-      scale: 1.15, 
-      opacity: 0, 
-      filter: "blur(5px)" 
+    hidden: {
+      scale: 1.15,
+      opacity: 0,
+      filter: "blur(5px)",
     },
     visible: {
       scale: 1,
@@ -65,9 +60,9 @@ const GiftOfLight = () => {
 
   // Elegant Text Reveal (Slow Slide Up)
   const elegantTextVariants = {
-    hidden: { 
-      y: 30, 
-      opacity: 0 
+    hidden: {
+      y: 30,
+      opacity: 0,
     },
     visible: {
       y: 0,
@@ -115,12 +110,12 @@ const GiftOfLight = () => {
     <section className="relative w-full py-12 md:py-16 lg:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image src={yelloWbg} alt="Yellow background" fill priority className="object-cover object-right lg:object-center z-0" />
-      
+
       {/* Black Overlay - Mobile & Tablet Only */}
       <div className="absolute inset-0 bg-black/10 z-1 lg:hidden"></div>
 
       {/* CONTENT WRAPPER */}
-      <motion.div 
+      <motion.div
         className="relative z-10 container mx-auto h-full flex flex-col lg:flex-row items-center justify-center lg:justify-end px-4 sm:px-6 md:px-8 lg:px-20 py-0 lg:py-0 "
         variants={containerVariants}
         initial="hidden"
@@ -128,12 +123,9 @@ const GiftOfLight = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         {/* RIGHT CONTENT */}
-        <div className="w-full  lg:w-1/2 text-center lg:text-center max-w-2xl font-semibold lg:max-w-[650px] ">
+        <div className="w-full  lg:w-1/2 text-center lg:text-center max-w-2xl font-semibold lg:max-w-163">
           {/* Small Star Icon */}
-          <motion.div 
-            className="flex justify-center mb-3"
-            variants={elegantTextVariants}
-          >
+          <motion.div className="flex justify-center mb-3" variants={elegantTextVariants}>
             <span className="text-3xl text-[#244a37]">
               <Sparkles className="w-7 h-7" />
             </span>
@@ -141,32 +133,21 @@ const GiftOfLight = () => {
 
           {/* Heading */}
           <div className="overflow-hidden">
-            <motion.h2 
-              className="text-3xl md:text-3xl lg:text-4xl  text-[#244a37] font-marcellus leading-tight"
-              variants={elegantTextVariants}
-            >
+            <motion.h2 className="text-3xl md:text-3xl lg:text-4xl  text-[#244a37] font-marcellus leading-tight" variants={elegantTextVariants}>
               "A Gift Of Light That Heals"
             </motion.h2>
           </div>
 
           {/* Subheading */}
-          <motion.p 
-            className="mt-4 text-base md:text-lg text-[#244a37] font-medium leading-relaxed"
-            variants={elegantTextVariants}
-          >
+          <motion.p className="mt-4 text-base md:text-lg text-[#244a37] font-medium leading-relaxed" variants={elegantTextVariants}>
             Envelop your space in serene light and restorative <br /> energy with our reiki-infused luxury crystal candles.
           </motion.p>
 
           {/* FEATURES */}
           <div className="mt-12 flex flex-wrap justify-evenly gap-10  items-center">
             {features.map((feature, index) => (
-              <motion.div 
-                key={index}
-                className="flex flex-col items-center cursor-pointer" 
-                variants={featureVariants}
-                whileHover="hover"
-              >
-                <motion.div 
+              <motion.div key={index} className="flex flex-col items-center cursor-pointer" variants={featureVariants} whileHover="hover">
+                <motion.div
                   className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32"
                   initial="hidden"
                   whileInView="visible"
@@ -184,29 +165,22 @@ const GiftOfLight = () => {
                       },
                     },
                   }}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.15,
                     filter: "drop-shadow(0 0 20px rgba(36, 74, 55, 0.8)) drop-shadow(0 0 40px rgba(36, 74, 55, 0.4))",
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Image 
-                    src={feature.icon} 
-                    alt="" 
-                    className="w-full h-full object-contain"
-                    aria-hidden="true"
-                  />
+                  <Image src={feature.icon} alt="" className="w-full h-full object-contain" aria-hidden="true" />
                 </motion.div>
-                <p className="-mt-2 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center whitespace-pre-line">
-                  {feature.label}
-                </p>
+                <p className="-mt-2 text-xs md:text-sm tracking-wide font-semibold text-[#244a37] text-center whitespace-pre-line">{feature.label}</p>
               </motion.div>
             ))}
           </div>
 
           {/* BUTTON */}
           <motion.div className="mt-10" variants={elegantTextVariants}>
-            <motion.button 
+            <motion.button
               className="px-8 py-3 bg-[#e75f47] text-black rounded-full font-medium shadow-lg transform transition-all duration-300"
               whileHover={{ scale: 1.05, backgroundColor: "#ff7a57", boxShadow: "0 10px 20px rgba(255, 143, 113, 0.3)" }}
               whileTap={{ scale: 0.98 }}
