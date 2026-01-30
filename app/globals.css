@@ -22,6 +22,10 @@ body {
   right: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 body.lenis-ready {
   position: relative;
   /* Re-enable normal flow after Lenis is ready */
@@ -54,8 +58,54 @@ body.lenis-ready {
 .font-marcellus {
   font-family: var(--font-marcellus), serif;
 }
+.font-calibry {
+  font-family: var(--font-calibri);
+}
+
 .service_item:hover .service_item_icon {
   scale: 1.15;
   filter: drop-shadow(0 0 20px rgba(233, 240, 234, 0.8)) drop-shadow(0 0 40px rgba(233, 240, 234, 0.4));
   transition: all 0.3s ease;
+}
+
+.pill-btn {
+  background-color: #e75f47;
+  color: #111;
+  border: none;
+  cursor: pointer;
+
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  padding: 14px 36px; /* controls the pill width */
+  height: 56px; /* important for strong pill shape */
+  border-radius: 9999px; /* full capsule */
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.3s ease;
+}
+
+.pill-btn:hover {
+  background-color: #d97560;
+}
+
+.faq_sss .accordion-body {
+  color: #121212a6;
+  font-size: 16px;
+}
+.fac_acc .accordion-item {
+  border: none;
+}
+.fac_acc .accordion-header button {
+  background-color: transparent;
+  color: #111;
+  font-size: 20px;
+  font-family: var(--fontRegular);
+  box-shadow: none;
+  border: none;
 }

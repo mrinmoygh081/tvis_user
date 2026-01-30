@@ -2,10 +2,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import Logo from "../../public/asset/images/HerosecImg/Logo3.png";
-import HeroImg from "../../public/asset/images/HerosecImg/heroImg.jpg";
-import HeroImg2 from "../../public/asset/images/HerosecImg/hero2.png";
-import profileImg from "../../public/asset/images/HerosecImg/profile.jpg";
+import Link from "next/link";
+// import Logo from "../../public/asset/images/HerosecImg/Logo3.png";
+// import HeroImg from "../../public/asset/images/HerosecImg/heroImg.jpg";
+// import HeroImg2 from "../../public/asset/images/HerosecImg/hero2.png";
+// import profileImg from "../../public/asset/images/HerosecImg/profile.jpg";
 
 const HeroSection = () => {
   const targetRef = useRef(null);
@@ -46,16 +47,13 @@ const HeroSection = () => {
   };
 
   return (
-    <div
-      ref={targetRef}
-      className="bg-[#F3EDE5] relative z-0 min-h-screen lg:h-screen w-full overflow-hidden"
-    >
+    <div ref={targetRef} className="bg-[#F3EDE5] relative z-0 min-h-screen lg:h-screen w-full overflow-hidden">
       {/* Background Layer - moves slowest */}
       <motion.div className="absolute inset-0 bg-[#F3EDE5] z-0" style={{ y: backgroundY }} />
 
       {/* Content Layer - moves with parallax */}
       <motion.div
-        className="relative z-30 lg:h-full flex flex-col lg:flex-row justify-center items-center w-full lg:max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-0 overflow-hidden"
+        className="relative z-30 lg:h-full flex flex-col lg:flex-row justify-center items-center w-full lg:max-w-400 mx-auto px-4 sm:px-6 md:px-8 lg:px-0 overflow-hidden"
         style={{ y: contentY }}
         initial="hidden"
         whileInView="visible"
@@ -65,7 +63,7 @@ const HeroSection = () => {
           <div className="w-full h-full flex flex-col ">
             <div id="top" className=" w-full lg:h-1/4 md:h-1/2 h-1/2 py-4 lg:pt-4 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex items-center lg:items-start ">
               <motion.div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-48 lg:h-w-48" variants={scaleIn}>
-                <Image src={Logo} alt="TVIS Logo" className="w-full h-full object-contain" />
+                <Image src={"/asset/images/HerosecImg/Logo3.png"} height={300} width={300} alt="TVIS Logo" className="w-full h-full object-contain" />
               </motion.div>
             </div>
 
@@ -87,7 +85,7 @@ const HeroSection = () => {
                   </motion.h1>
 
                   {/* CTA Button */}
-                  <motion.button
+                  {/* <motion.button
                     className="inline-block bg-[#e75f47] hover:bg-[#d97560] text-black font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-colors duration-300 text-xs sm:text-sm uppercase tracking-wide w-fit mb-6"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
@@ -95,20 +93,15 @@ const HeroSection = () => {
                     custom={0.4}
                   >
                     Work With Me
-                  </motion.button>
+                  </motion.button> */}
+                  <Link href="/contact" className="pill-btn">
+                    WORK WITH ME
+                  </Link>
                 </div>
                 {/* right img */}
-                <motion.div
-                  className="w-full sm:w-1/5 lg:w-1/5 flex items-end justify-start sm:justify-end lg:justify-end mt-4 sm:mt-0"
-                  variants={fadeUp}
-                  custom={0.5}
-                >
-                  {/* HeroImg2 - Small Image */}
-                  <motion.div 
-                    className="w-32 h-32 sm:w-full sm:h-36 lg:w-full lg:h-36 flex-shrink-0 hidden md:block"
-                    style={{ y: leftImageY }}
-                  >
-                    <Image src={HeroImg2} alt="Healing hands" className="w-full h-full object-cover" />
+                <motion.div className="w-full sm:w-1/5 lg:w-1/5 flex items-end justify-start sm:justify-end lg:justify-end mt-4 sm:mt-0" variants={fadeUp} custom={0.5}>
+                  <motion.div className="w-32 h-32 sm:w-full sm:h-36 lg:w-full lg:h-36 shrink-0 hidden md:block" style={{ y: leftImageY }}>
+                    <Image src={"/asset/images/HerosecImg/cosmic-icon.jpeg"} height={400} width={400} alt="Healing hands" className="w-full h-full object-cover" />
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -121,15 +114,15 @@ const HeroSection = () => {
                 <div className="w-full sm:w-4/5 lg:w-4/5 flex flex-col sm:flex-row ">
                   <div className="w-full sm:w-3/4 lg:w-3/4 h-full flex justify-center sm:justify-start lg:justify-center items-center py-4 sm:py-0">
                     <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#2d4a47] font-marcellus text-center sm:text-left lg:text-center">
-                      Energy Healing <br /> with <span className="font-laluxes text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">Smita Saha</span>
+                      <i>
+                        Energy Healing <br /> with
+                      </i>{" "}
+                      <span className="font-calibry text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#d97560]">Smita Saha</span>
                     </p>
                   </div>
                   <div className="w-full sm:w-1/4 lg:w-1/4 h-full flex justify-center sm:justify-end lg:justify-end items-start">
-                    <motion.div 
-                      className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44"
-                      style={{ y: leftImageY }}
-                    >
-                      <Image src={profileImg} alt="Smita Saha Profile" className="w-full h-full object-cover" />
+                    <motion.div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44" style={{ y: leftImageY }}>
+                      <Image src={"/asset/images/HerosecImg/hero2.png"} height={500} width={500} alt="Smita Saha Profile" className="w-full h-full object-cover" />
                     </motion.div>
                   </div>
                 </div>
@@ -143,11 +136,17 @@ const HeroSection = () => {
           <div className="h-full flex flex-col">
             <motion.div id="image" className="lg:h-5/6 w-full flex justify-center lg:justify-start items-end pb-4 sm:pb-6 lg:pb-0" variants={scaleIn} style={{ y: rightImageY }}>
               <motion.div
-                className="hidden md:block w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none aspect-square sm:aspect-[4/5] lg:aspect-auto lg:h-[550px]"
+                className="hidden md:block w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none aspect-square sm:aspect-4/5 lg:aspect-auto lg:h-137.5"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 120, damping: 15 }}
               >
-                <Image src={HeroImg} alt="Mystical energy visualization" className="w-full lg:w-[80%] h-full object-cover pt-0 lg:pt-4 rounded-2xl md:rounded-xl lg:rounded-none" />
+                <Image
+                  src={"/asset/images/HerosecImg/smita-saha.jpeg"}
+                  width={300}
+                  height={300}
+                  alt="Mystical energy visualization"
+                  className="w-full lg:w-[80%] h-full object-cover pt-0 lg:pt-4 rounded-2xl md:rounded-xl lg:rounded-none"
+                />
               </motion.div>
             </motion.div>
 

@@ -47,10 +47,7 @@ const ReturnToClarity = () => {
   const statsRef = useRef(null);
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-[#d5dacd] text-[#244a37] relative z-10 "
-    >
+    <section ref={sectionRef} className="bg-[#d5dacd] text-[#244a37] relative z-10 ">
       <motion.div
         className="mx-auto w-full lg:max-w-[1400px] px-6 md:px-10 py-10 md:py-10 min-h-screen flex flex-col md:flex-row justify-center items-center"
         initial={{ opacity: 0, y: 50 }}
@@ -63,11 +60,11 @@ const ReturnToClarity = () => {
           <div className="flex flex-col items-center justify-center w-full ">
             {/* Circular photo */}
             <motion.div
-              className="relative rounded-full overflow-hidden border-2 border-transparent shadow-sm bg-white w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 mx-auto"
+              className="relative rounded-full overflow-hidden w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 mx-auto"
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Image src={profileImg} alt="Smita Saha - Certified Energy Healer" className="object-cover" fill />
+              <Image src={"/asset/images/smita.png"} alt="Smita Saha - Certified Energy Healer" className="object-cover" fill />
             </motion.div>
 
             {/* Signature */}
@@ -82,7 +79,7 @@ const ReturnToClarity = () => {
                 Smita Saha
               </motion.h3>
               <motion.p
-                className="mt-2 text-sm sm:text-base md:text-base font-semibold text-center"
+                className="mt-2 text-sm sm:text-base md:text-xl font-semibold text-center italic"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -95,7 +92,7 @@ const ReturnToClarity = () => {
             {/* Stats row */}
             <motion.div
               ref={statsRef}
-              className="w-full max-w-md mt-6 flex justify-center  items-center "
+              className="w-full max-w-md mt-6 flex justify-center items-center italic"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
@@ -108,14 +105,14 @@ const ReturnToClarity = () => {
                 ].map((stat) => (
                   <motion.div
                     key={stat.label}
-                    className="text-center  flex flex-col justify-center items-center"
+                    className="text-center flex flex-col justify-center items-center"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 200, damping: 12 }}
                   >
                     <p className="text-2xl sm:text-3xl md:text-3xl font-semibold">
                       <CountUpNumber target={stat.value} suffix="+" duration={2} />
                     </p>
-                    <p className="mt-1 text-sm sm:text-base md:text-base font-medium">{stat.label}</p>
+                    <p className="mt-1 text-sm sm:text-base md:text-xl font-medium">{stat.label}</p>
                   </motion.div>
                 ))}
               </div>
@@ -166,7 +163,9 @@ const ReturnToClarity = () => {
           >
             With a profound connection to the unseen realms, I practise and offer transformative healing experiences through various healing modalities like{" "}
             <strong className="italic">
-              PLR (Past Life Regression), Reiki Healing, Akashic Records, Life Between Life Therapist, Psycic Surgery, Inner Child Healing, Oracle Card Reading, Animal Telepathic Communication, EFT (Emotional Freedom Technique), and Ho'oponopono Master. She also offer Angelic Healing, Chakra Balancing, EMDR, Ancestor Healing, and Family Constellations.
+              PLR (Past Life Regression), Reiki Healing, Akashic Records, Life Between Life Therapist, Psycic Surgery, Inner Child Healing, Oracle Card Reading, Animal Telepathic
+              Communication, EFT (Emotional Freedom Technique), and Ho'oponopono Master. She also offer Angelic Healing, Chakra Balancing, EMDR, Ancestor Healing, and Family
+              Constellations.
             </strong>
           </motion.p>
 
@@ -177,7 +176,8 @@ const ReturnToClarity = () => {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            <strong className="italic">With more than 800+ client sessions and 14+ healing modalities,</strong> I continue to serve people with a compassionate and personalised approach, helping them to step into their fullest potential and live a life filled with purpose, love, and light.
+            <strong className="italic">With more than 800+ client sessions and 14+ healing modalities,</strong> I continue to serve people with a compassionate and personalised
+            approach, helping them to step into their fullest potential and live a life filled with purpose, love, and light.
           </motion.p>
 
           <motion.p

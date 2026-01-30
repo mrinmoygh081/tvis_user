@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import React from "react";
-import leftsideImg from "../../public/asset/images/leftSideImg.jpg";
 
 import { motion } from "framer-motion";
 

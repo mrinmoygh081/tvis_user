@@ -1,3 +1,6 @@
+import FaqSection from "@/components/FaqSection";
+import Link from "next/link";
+
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#F3EDE5] text-[#2d4a47]">
@@ -14,55 +17,86 @@ export default function ServicesPage() {
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="flex flex-col justify-between rounded-2xl border border-[#2d4a47]/15 bg-[#f5f1e8] p-6 shadow-sm">
             <div>
-              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">1:1 Healing Sessions</h2>
+              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Free Guidance Call</h2>
               <p className="mt-3 text-sm text-[#2d4a47] font-marcellus">
-                Personalized, intuitive sessions designed to gently release emotional weight, regulate the nervous system, and reconnect you with your inner voice.
+                The complimentary interaction session is a gentle one-on-one conversation over phone designed to connect, understand your needs, and guide you toward the right
+                healing approach. During this session, we listen with care, explore what you are experiencing, and help clarify the support that may serve you best. The
+                conversation is held in complete confidentiality, and all emotions that arise are welcomed and respected.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-[#2d4a47] font-marcellus">
-                <li>• 60–75 minute online session</li>
-                <li>• Energetic & somatic-based support</li>
-                <li>• Practical grounding tools to integrate after</li>
+              <ul className="list-disc ms-4 mt-4 mb-4 space-y-2 text-sm text-[#2d4a47] font-marcellus">
+                <li>A 10–15 minute one-on-one telephonic conversation</li>
+                <li>A safe space to ask questions and share concerns</li>
+                <li>An introduction to the healing process, with no obligation</li>
+                <li>Guidance to identify what you may wish to release, heal, or invite into your life</li>
               </ul>
+              <p>This session is offered to help you gain clarity and feel supported before beginning any therapy.</p>
             </div>
-            <button className="mt-6 inline-flex items-center justify-center rounded-full bg-[#e75f47] px-6 py-2.5 text-sm font-semibold text-black shadow-sm transition hover:bg-[#d97560] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e75f47] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F3EDE5] font-marcellus tracking-wide uppercase">
-              Book a session
-            </button>
+            <Link
+              href={"/contact"}
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-[#e75f47] px-6 py-2.5 text-sm font-semibold text-black shadow-sm transition hover:bg-[#d97560] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e75f47] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F3EDE5] font-marcellus tracking-wide uppercase"
+            >
+              Book a free session
+            </Link>
           </div>
 
           <div className="flex flex-col justify-between rounded-2xl border border-[#2d4a47]/15 bg-[#d5dacd] p-6 shadow-sm">
             <div>
-              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Multi-Session Journeys</h2>
+              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">1:1 Healing Session</h2>
               <p className="mt-3 text-sm text-[#2d4a47] font-marcellus">
-                A guided, multi-week container for deeper transformation, tailored to seasons of transition, burnout, grief, or soul-aligned change.
+                Each session is guided intuitively and chosen based on your needs and readiness. These therapies support emotional release, deep healing, energetic balance, and
+                spiritual alignment. Which will positively impact your wellbeing.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-[#2d4a47] font-marcellus">
-                <li>• 4–8 session packages</li>
-                <li>• Ongoing support between sessions</li>
-                <li>• Gentle structure with space to evolve</li>
+              <ul className="list-disc ms-4 mt-4 mb-4 space-y-2 text-sm text-[#2d4a47] font-marcellus">
+                <li>60–75 minute one-on-one online session</li>
+                <li>Intuitive energetic and somatic healing</li>
+                <li>Support for emotional release and energetic alignment</li>
+                <li>Simple grounding practices to help integrate the healing</li>
               </ul>
+              <p>Sessions are offered after the complimentary interaction session to ensure alignment and readiness.</p>
             </div>
-            <button className="mt-6 inline-flex items-center justify-center rounded-full border border-[#2d4a47]/40 bg-transparent px-6 py-2.5 text-sm font-semibold text-[#2d4a47] shadow-sm transition hover:bg-[#f5f1e8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e75f47] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F3EDE5] font-marcellus tracking-wide uppercase">
-              Explore journeys
-            </button>
+            <Link
+              href={"/contact"}
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-[#e75f47] px-6 py-2.5 text-sm font-semibold text-black shadow-sm transition hover:bg-[#d97560] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e75f47] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F3EDE5] font-marcellus tracking-wide uppercase"
+            >
+              Book a session
+            </Link>
           </div>
 
           <div className="flex flex-col justify-between rounded-2xl border border-[#2d4a47]/15 bg-[#F3EDE5] p-6 shadow-sm">
             <div>
-              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Workshops & Circles</h2>
+              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Multi-Session Healing Journeys</h2>
               <p className="mt-3 text-sm text-[#2d4a47] font-marcellus">
-                Community spaces for grounding, reflection, and shared healing through themed gatherings, teachings, and practices.
+                Our multi-session healing journeys offer sustained, personalised support for deeper emotional, energetic, and spiritual transformation. These guided programs are
+                ideal during periods of transition, burnout, grief, or when you are seeking meaningful, soul-aligned change. <br />
+                Working across multiple sessions allows healing to unfold gradually, creating lasting integration and stability rather than quick fixes.
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-[#2d4a47] font-marcellus">
-                <li>• Online or in-person experiences</li>
-                <li>• Centered on presence, embodiment, and connection</li>
-                <li>• Ideal for groups, teams, or communities</li>
+              <ul className="list-disc ms-4 mt-4 mb-4 space-y-2 text-sm text-[#2d4a47] font-marcellus">
+                <li>Curated 4 to 8 session packages based on your needs</li>
+                <li>Ongoing support between sessions for continuity and reassurance</li>
+                <li>A gentle, flexible structure that allows space for growth and evolution</li>
               </ul>
+              <p>These journeys are designed to support long-term healing, self-awareness, and alignment at your own pace.</p>
             </div>
-            <button className="mt-6 inline-flex items-center justify-center rounded-full border border-[#2d4a47]/40 bg-transparent px-6 py-2.5 text-sm font-semibold text-[#2d4a47] shadow-sm transition hover:bg-[#f5f1e8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e75f47] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F3EDE5] font-marcellus tracking-wide uppercase">
+            <Link
+              href={"/contact"}
+              className="mt-6 inline-flex items-center justify-center rounded-full border border-[#2d4a47]/40 bg-transparent px-6 py-2.5 text-sm font-semibold text-[#2d4a47] shadow-sm transition hover:bg-[#f5f1e8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e75f47] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F3EDE5] font-marcellus tracking-wide uppercase"
+            >
               Inquire about offerings
-            </button>
+            </Link>
+            {/* <button className="mt-6 inline-flex items-center justify-center rounded-full border border-[#2d4a47]/40 bg-transparent px-6 py-2.5 text-sm font-semibold text-[#2d4a47] shadow-sm transition hover:bg-[#f5f1e8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e75f47] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F3EDE5] font-marcellus tracking-wide uppercase">
+              Explore journeys
+            </button> */}
           </div>
         </div>
+
+        <section className="faq_sss pt-10">
+          <div className="container">
+            <div className="title pb-4">
+              <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-marcellus tracking-tight text-[#2d4a47]">Services I provide</h2>
+            </div>
+            <FaqSection />
+          </div>
+        </section>
 
         <div className="mt-16 rounded-2xl bg-[#d5dacd] p-6 sm:p-8 border border-[#2d4a47]/10">
           <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Not sure where to begin?</h2>
