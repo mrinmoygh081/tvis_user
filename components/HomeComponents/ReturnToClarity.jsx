@@ -47,7 +47,7 @@ const ReturnToClarity = () => {
   const statsRef = useRef(null);
 
   return (
-    <section ref={sectionRef} className="bg-[#d5dacd] text-[#244a37] relative z-10 ">
+    <section data-section ref={sectionRef} className="bg-[#d5dacd] text-[#244a37] relative z-10 ">
       <motion.div
         className="mx-auto w-full lg:max-w-350 px-6 md:px-10 py-10 md:py-10 min-h-screen flex flex-col md:flex-row justify-center items-center"
         initial={{ opacity: 0, y: 50 }}
@@ -70,7 +70,7 @@ const ReturnToClarity = () => {
             {/* Signature */}
             <div className="text-center md:text-center lg:text-left mt-2">
               <motion.h3
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-laluxes leading-tight text-center"
+                className="text-3xl sm:text-4xl md:text-4xl font-calibry italic leading-tight text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -79,7 +79,7 @@ const ReturnToClarity = () => {
                 Smita Saha
               </motion.h3>
               <motion.p
-                className="mt-2 text-sm sm:text-base md:text-xl font-semibold text-center italic"
+                className="text-sm sm:text-base md:text-xl font-semibold text-center italic"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -92,7 +92,7 @@ const ReturnToClarity = () => {
             {/* Stats row */}
             <motion.div
               ref={statsRef}
-              className="w-full max-w-md mt-6 flex justify-center items-center italic"
+              className="w-full max-w-md mt-6 flex justify-center items-center italic text-[#ff5252]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
@@ -163,7 +163,7 @@ const ReturnToClarity = () => {
           >
             With a profound connection to the unseen realms, I practise and offer transformative healing experiences through various healing modalities like{" "}
             <strong className="italic">
-              PLR (Past Life Regression), Reiki Healing, Akashic Records, Life Between Life Therapist, Psycic Surgery, Inner Child Healing, Oracle Card Reading, Animal Telepathic
+              PLR (Past Life Regression), Reiki Healing, Akashic Records, Life Between Life Therapist, Psychic Surgery, Inner Child Healing, Oracle Card Reading, Animal Telepathic
               Communication, EFT (Emotional Freedom Technique), and Ho'oponopono Master. She also offer Angelic Healing, Chakra Balancing, EMDR, Ancestor Healing, and Family
               Constellations.
             </strong>

@@ -116,13 +116,13 @@ body.lenis-ready {
 
 .scrollTop {
   position: fixed;
-  right: 20px;
+  right: 10px;
   bottom: 20px;
   color: #000;
   background-color: #e75f47;
   border-radius: 50%;
   /* height: 80px; */
-  width: 80px;
+  /* width: 80px; */
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -131,15 +131,15 @@ body.lenis-ready {
   z-index: 99999999;
   border: none;
   transition: all 0.7s ease-in-out;
-  transform: translateX(0);
-  padding: 10px;
+  transform: rotate(0deg);
+  margin: 5px;
+  padding: 5px;
 }
 .scrollTop.active {
-  transform: translateX(200px);
+  transform: rotate(180deg);
 }
 .scrollTop img {
-  width: 20px;
-  transform: rotate(180deg);
+  width: 28px;
 }
 
 .testimonial-swiper {

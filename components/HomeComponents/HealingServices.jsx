@@ -69,8 +69,7 @@ export default function HealingServices() {
         {/* Title */}
         <motion.header className="mb-10 md:mb-14 text-center" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={headerVariants}>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-marcellus tracking-tight">
-            <span className="mr-2">Reiki &amp; Other</span>
-            <span className="inline-block  px-3 py-1 rounded-sm text-[#d7f0e5]">Healing Services</span>
+            <span className="mr-2">HEALING MODALITIES</span>
           </h2>
         </motion.header>
 
@@ -82,7 +81,7 @@ export default function HealingServices() {
               {servicesHome.map((s, i) => (
                 <motion.li
                   key={s.title}
-                  className="flex items-start gap-6 md:gap-8 p-4 rounded-xl transition-all duration-300 hover:bg-[#1a4d40]/40 cursor-default border border-transparent hover:border-[#e9f0ea]/20 hover:shadow-lg service_item"
+                  className="md:flex items-start gap-6 md:gap-8 p-4 rounded-xl transition-all duration-300 hover:bg-[#1a4d40]/40 cursor-default border border-transparent hover:border-[#e9f0ea]/20 hover:shadow-lg service_item"
                   initial={{ opacity: 0, y: 40, x: -20 }}
                   whileInView={{ opacity: 1, y: 0, x: 0 }}
                   viewport={{ once: false, amount: 0.3 }}

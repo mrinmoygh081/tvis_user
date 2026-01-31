@@ -24,7 +24,7 @@ const MarqueeComponent = () => {
   return (
     <section className="w-full bg-[#e75f47] relative overflow-x-clip overflow-y-hidden">
       <div className="py-8 md:py-10 overflow-x-clip overflow-y-hidden">
-        <Marquee speed={50} gradient={false} pauseOnHover={false} autoFill={true} style={{ overflow: "hidden" }}>
+        <Marquee speed={200} gradient={false} pauseOnHover={false} autoFill={true} style={{ overflow: "hidden" }}>
           {services.map((service, idx) => (
             <div key={idx} className="flex items-center justify-center whitespace-nowrap">
               <span className="font-marcellus text-[#2d5016] text-2xl md:text-3xl lg:text-5xl font-medium leading-none">{service}</span>

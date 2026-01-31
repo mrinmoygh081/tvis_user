@@ -140,7 +140,7 @@ const GiftOfLight = () => {
 
           {/* Subheading */}
           <motion.p className="mt-4 text-base md:text-lg text-[#244a37] font-medium leading-relaxed" variants={elegantTextVariants}>
-            Envelop your space in serene light and restorative <br /> energy with our reiki-infused luxury crystal candles.
+            Envelop your space in serene light and restorative <br /> energy with healing energy and intention infused luxury crystal candles.
           </motion.p>
 
           {/* FEATURES */}

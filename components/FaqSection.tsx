@@ -15,7 +15,7 @@ export default function FaqSection() {
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               className="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-white transition"
             >
-              <span className="font-medium text-base">{item.q}</span>
+              <span className="font-semibold text-base">{item.q}</span>
 
               <span className={`text-2xl transition-transform duration-600 ${openIndex === index ? "rotate-45" : ""}`}>+</span>
             </button>

@@ -8,6 +8,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [showNav, setShowNav] = useState(true);
+
   const navItems = [
     { label: "HOME", href: "/" },
     { label: "ABOUT US", href: "/about" },
@@ -15,6 +18,30 @@ const Navbar = () => {
     // { label: "SHOP", href: "/shop" },
     // { label: "BLOG", href: "/blog" },
   ];
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 200) {
+        setShowNav(true);
+      } else {
+        if (currentScrollY > lastScrollY) {
+          // scrolling down
+          setShowNav(false);
+        } else {
+          // scrolling up
+          setShowNav(true);
+        }
+      }
+
+      setLastScrollY(currentScrollY);
+      setIsScrolled(currentScrollY > 0);
+    };
+
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
 
   // Handle scroll event to add blur effect
   useEffect(() => {
@@ -56,7 +83,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex items-center justify-end bg-transparent z-50">
+    <nav
+      className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex items-center justify-end z-50
+  transition-transform duration-300 ease-in-out
+  ${showNav ? "translate-y-0" : "-translate-y-full"}`}
+    >
       {/* Desktop Navigation Bar */}
       <div
         className={`hidden lg:flex items-stretch border border-[#2d5016] rounded-full overflow-hidden transition-all duration-300 ${
@@ -94,7 +125,6 @@ const Navbar = () => {
           SCHEDULE SESSION
         </Link>
       </div>
-
       {/* Mobile/Tablet Hamburger Button */}
       <button
         onClick={toggleMenu}
@@ -106,7 +136,6 @@ const Navbar = () => {
         <span className={`block w-5 h-0.5 bg-[#2d5016] transition-all duration-300 ${isMenuOpen ? "opacity-0" : "opacity-100"}`}></span>
         <span className={`block w-5 h-0.5 bg-[#2d5016] transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-1.5" : "translate-y-1"}`}></span>
       </button>
-
       {/* Mobile/Tablet Menu Overlay */}
       <div className={`lg:hidden fixed inset-0 bg-[#f5f1e8] z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
         {/* Close Button */}

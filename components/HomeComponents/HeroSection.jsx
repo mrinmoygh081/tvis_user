@@ -152,7 +152,7 @@ const HeroSection = () => {
 
             <motion.div id="text" className="lg:h-1/6 w-full flex items-center lg:items-start justify-center lg:justify-start pt-0 sm:pt-0 lg:pt-5 ">
               <div className="text-center lg:text-center w-full lg:w-[80%] px-2 lg:px-0">
-                <p className="text-xs sm:text-sm text-[#2d4a47] uppercase tracking-widest font-semibold">Energy Healer • Mentor • Soul Coach • Mystic Teacher</p>
+                <p className="text-xs sm:text-sm text-[#e75f47] uppercase tracking-widest font-semibold">Energy Healer • Mentor • Soul Coach • Mystic Teacher</p>
               </div>
             </motion.div>
           </div>

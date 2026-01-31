@@ -24,9 +24,23 @@ const ScrollTop = () => {
       behavior: "smooth",
     });
   };
+  const scrollToNext = () => {
+    const sections: any = Array.from(document.querySelectorAll("[data-section]"));
+
+    const currentScroll = window.scrollY;
+
+    // Find the first section below current scroll
+    const nextSection = sections.find((section: any) => {
+      return section.offsetTop > currentScroll + 10;
+    });
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <button className={isVisible ? "scrollTop" : "scrollTop active"} onClick={scrollToTop}>
+    <button className={isVisible ? "scrollTop" : "scrollTop active"} onClick={isVisible ? scrollToTop : scrollToNext}>
       {/* SCROLL UP */}
       <img src="/asset/images/icon-bottom.png" alt="" />
     </button>

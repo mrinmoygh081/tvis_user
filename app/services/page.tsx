@@ -6,7 +6,6 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#F3EDE5] text-[#2d4a47]">
       <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="mb-10 max-w-3xl">
-          <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-[#2d4a47]/80 font-marcellus">Services</p>
           <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-marcellus tracking-tight text-[#2d4a47]">Healing experiences to support your whole self.</h1>
           <p className="mt-4 text-sm sm:text-lg text-[#2d4a47] font-marcellus">
             Each offering is crafted to meet you where you are—emotionally, energetically, and spiritually—so you can soften into a deeper sense of clarity, grounding, and inner
@@ -17,7 +16,7 @@ export default function ServicesPage() {
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="flex flex-col justify-between rounded-2xl border border-[#2d4a47]/15 bg-[#f5f1e8] p-6 shadow-sm">
             <div>
-              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Free Guidance Call</h2>
+              <h2 className="text-xl font-semibold text-[#ff5252] font-marcellus">Free Guidance Call</h2>
               <p className="mt-3 text-sm text-[#2d4a47] font-marcellus">
                 The complimentary interaction session is a gentle one-on-one conversation over phone designed to connect, understand your needs, and guide you toward the right
                 healing approach. During this session, we listen with care, explore what you are experiencing, and help clarify the support that may serve you best. The
@@ -41,7 +40,7 @@ export default function ServicesPage() {
 
           <div className="flex flex-col justify-between rounded-2xl border border-[#2d4a47]/15 bg-[#d5dacd] p-6 shadow-sm">
             <div>
-              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">1:1 Healing Session</h2>
+              <h2 className="text-xl font-semibold text-[#ff5252] font-marcellus">1:1 Healing Session</h2>
               <p className="mt-3 text-sm text-[#2d4a47] font-marcellus">
                 Each session is guided intuitively and chosen based on your needs and readiness. These therapies support emotional release, deep healing, energetic balance, and
                 spiritual alignment. Which will positively impact your wellbeing.
@@ -64,7 +63,7 @@ export default function ServicesPage() {
 
           <div className="flex flex-col justify-between rounded-2xl border border-[#2d4a47]/15 bg-[#F3EDE5] p-6 shadow-sm">
             <div>
-              <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Multi-Session Healing Journeys</h2>
+              <h2 className="text-xl font-semibold text-[#ff5252] font-marcellus">Multi-Session Healing Journeys</h2>
               <p className="mt-3 text-sm text-[#2d4a47] font-marcellus">
                 Our multi-session healing journeys offer sustained, personalised support for deeper emotional, energetic, and spiritual transformation. These guided programs are
                 ideal during periods of transition, burnout, grief, or when you are seeking meaningful, soul-aligned change. <br />
@@ -92,7 +91,7 @@ export default function ServicesPage() {
         <section className="faq_sss pt-10">
           <div className="container">
             <div className="title pb-4">
-              <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-marcellus tracking-tight text-[#2d4a47]">Services I provide</h2>
+              <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-marcellus tracking-tight text-[#2d4a47]">Healing Offerings</h2>
             </div>
             <FaqSection />
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const ContactPage = () => {
   return (
@@ -159,12 +160,20 @@ const ContactPage = () => {
 
               <div className="space-y-2">
                 <p className="font-semibold font-marcellus tracking-wide uppercase text-xs text-[#2d4a47]/80">Email</p>
-                <p>you@example.com</p>
+                <p>
+                  <Link href="mailto:care@tvsworld.com" target="_blank">
+                    care@tvsworld.com
+                  </Link>
+                </p>
               </div>
 
               <div className="space-y-2">
                 <p className="font-semibold font-marcellus tracking-wide uppercase text-xs text-[#2d4a47]/80">Social</p>
-                <p>@yourhandle (Instagram)</p>
+                <p>
+                  <Link href="https://www.instagram.com/tvis_thehealinglight/" target="_blank">
+                    @tvis_thehealinglight (Instagram)
+                  </Link>
+                </p>
               </div>
             </div>
           </aside>

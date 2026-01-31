@@ -95,8 +95,8 @@ const Footer = () => {
         </div>
 
         <div className="hidden md:block">
-          <div className="col-span-1 md:col-span-1 p-6 flex items-center justify-center md:justify-end border-t md:border-r border-[#d5c2a0]">
-            <img src="/asset/images/footer_logo.png" alt="Healing hands" className="h-16 object-contain" />
+          <div className="col-span-1 md:col-span-1 p-6 flex items-center justify-center border-t md:border-r border-[#d5c2a0]">
+            <img src="/asset/images/footer_logo.png" alt="Healing hands" className="h-26 object-contain" />
           </div>
         </div>
 
