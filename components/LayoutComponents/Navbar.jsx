@@ -84,9 +84,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex items-center justify-end z-50
-  transition-transform duration-300 ease-in-out
-  ${showNav ? "translate-y-0" : "-translate-y-full"}`}
+      className={`fixed md:top-0 top-8 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 flex items-center justify-end z-50 transition-transform duration-300 ease-in-out ${showNav ? "translate-y-0" : "-translate-y-full"}`}
     >
       {/* Desktop Navigation Bar */}
       <div
@@ -149,7 +147,7 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <div className="flex flex-col items-center justify-center h-full px-6 py-20 space-y-6">
+        <div className="flex flex-col items-center justify-center px-6 py-20 space-y-6 h-screen bg-[#f5f1e8]">
           {/* Navigation Links */}
           {navItems.map((item) => {
             const active = isActive(item.href);
@@ -169,10 +167,10 @@ const Navbar = () => {
 
           {/* Call-to-Action Button */}
           <Link
-            href="/schedule"
+            href="/contact"
             onClick={() => setIsMenuOpen(false)}
             className={`w-full max-w-xs px-6 py-4 font-sans uppercase text-base font-semibold tracking-wide text-center rounded-full border-2 border-[#2d5016] transition-all duration-200 ${
-              isActive("/schedule") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent text-[#2d5016] hover:bg-[#e8e3d8]"
+              isActive("/contact") ? "bg-[#e75f47] text-[#2d5016] hover:bg-[#ff5252]" : "bg-transparent text-[#2d5016] hover:bg-[#e8e3d8]"
             }`}
           >
             SCHEDULE SESSION

@@ -83,8 +83,8 @@ body.lenis-ready {
   letter-spacing: 1px;
   text-transform: uppercase;
 
-  padding: 14px 36px; /* controls the pill width */
-  height: 56px; /* important for strong pill shape */
+  padding: 0 18px; /* controls the pill width */
+  height: 40px; /* important for strong pill shape */
   border-radius: 9999px; /* full capsule */
 
   display: inline-flex;

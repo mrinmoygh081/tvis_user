@@ -59,10 +59,10 @@ const HeroSection = () => {
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        <motion.div id="left" className="w-full lg:h-full lg:w-3/5 flex flex-col py-6 sm:py-8 md:py-10 lg:py-0" variants={fadeUp} custom={0.1}>
+        <motion.div id="left" className="w-full lg:h-full lg:w-1/2 flex flex-col py-6 sm:py-8 md:py-10 lg:py-0" variants={fadeUp} custom={0.1}>
           <div className="w-full h-full flex flex-col ">
-            <div id="top" className=" w-full lg:h-1/4 md:h-1/2 h-1/2 py-4 lg:pt-4 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex items-center lg:items-start ">
-              <motion.div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-48 lg:h-w-48" variants={scaleIn}>
+            <div id="top" className="w-full lg:h-1/4 md:h-1/2 h-1/2 py-4 lg:pt-7 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex items-center lg:items-start ">
+              <motion.div className="w-45 h-auto sm:w-44 sm:h-auto md:w-32 md:h-auto lg:w-58 lg:h-w-48" variants={scaleIn}>
                 <Image src={"/asset/images/HerosecImg/Logo3.png"} height={300} width={300} alt="TVIS Logo" className="w-full h-full object-contain" />
               </motion.div>
             </div>
@@ -81,7 +81,7 @@ const HeroSection = () => {
                     variants={fadeUp}
                     custom={0.3}
                   >
-                    Transformational <br /> Healing Guided By <br /> Energy & Wisdom
+                    Transformational Healing Guided By Energy & Wisdom
                   </motion.h1>
 
                   {/* CTA Button */}
@@ -99,11 +99,11 @@ const HeroSection = () => {
                   </Link>
                 </div>
                 {/* right img */}
-                <motion.div className="w-full sm:w-1/5 lg:w-1/5 flex items-end justify-start sm:justify-end lg:justify-end mt-4 sm:mt-0" variants={fadeUp} custom={0.5}>
+                {/* <motion.div className="w-full sm:w-1/5 lg:w-1/5 flex items-end justify-start sm:justify-end lg:justify-end mt-4 sm:mt-0" variants={fadeUp} custom={0.5}>
                   <motion.div className="w-32 h-32 sm:w-full sm:h-36 lg:w-full lg:h-36 shrink-0 hidden md:block" style={{ y: leftImageY }}>
                     <Image src={"/asset/images/HerosecImg/cosmic-icon.jpeg"} height={400} width={400} alt="Healing hands" className="w-full h-full object-cover" />
                   </motion.div>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
               <motion.div
                 id="images"
@@ -112,19 +112,18 @@ const HeroSection = () => {
                 custom={0.6}
               >
                 <div className="w-full sm:w-4/5 lg:w-4/5 flex flex-col sm:flex-row ">
-                  <div className="w-full sm:w-3/4 lg:w-3/4 h-full flex justify-center sm:justify-start lg:justify-center items-center py-4 sm:py-0">
+                  <div className="w-full sm:w-3/4 lg:w-4/4 h-full flex justify-center sm:justify-start lg:justify-center items-center py-4 sm:py-0">
                     <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#2d4a47] font-marcellus text-center sm:text-left lg:text-center">
                       <i>
-                        Energy Healing <br /> with
+                        Energy Healing <br /> with <span className="font-calibry text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#d97560]">Smita Saha</span>
                       </i>{" "}
-                      <span className="font-calibry text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#d97560]">Smita Saha</span>
                     </p>
                   </div>
-                  <div className="w-full sm:w-1/4 lg:w-1/4 h-full flex justify-center sm:justify-end lg:justify-end items-start">
+                  {/* <div className="w-full sm:w-1/4 lg:w-1/4 h-full flex justify-center sm:justify-end lg:justify-end items-start">
                     <motion.div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44" style={{ y: leftImageY }}>
                       <Image src={"/asset/images/HerosecImg/hero2.png"} height={500} width={500} alt="Smita Saha Profile" className="w-full h-full object-cover" />
                     </motion.div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="hidden sm:block lg:block lg:w-1/5"></div>
               </motion.div>
@@ -132,17 +131,17 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        <motion.div id="right" className="w-full lg:h-full lg:w-2/5 pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-6 sm:pb-8 lg:pb-0" variants={fadeUp} custom={0.3}>
+        <motion.div id="right" className="w-full lg:h-full lg:w-1/2 pt-6 sm:pt-8 md:pt-10 lg:pt-24 pb-6 sm:pb-8 lg:pb-0" variants={fadeUp} custom={0.3}>
           <div className="h-full flex flex-col">
-            <motion.div id="image" className="lg:h-5/6 w-full flex justify-center lg:justify-start items-end pb-4 sm:pb-6 lg:pb-0" variants={scaleIn} style={{ y: rightImageY }}>
+            <motion.div id="image" className="lg:h-full w-full flex justify-center lg:justify-start items-end pb-4 sm:pb-6 lg:pb-0" variants={scaleIn} style={{ y: rightImageY }}>
               <motion.div
-                className="hidden md:block w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none aspect-square sm:aspect-4/5 lg:aspect-auto lg:h-137.5"
+                className="hidden md:block w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-none aspect-square sm:aspect-4/5 lg:aspect-auto lg:h-auto"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 120, damping: 15 }}
               >
                 <Image
-                  src={"/asset/images/HerosecImg/smita-saha.jpeg"}
-                  width={300}
+                  src={"/asset/images/HerosecImg/hero3.jpeg"}
+                  width={600}
                   height={300}
                   alt="Mystical energy visualization"
                   className="w-full lg:w-[80%] h-full object-cover pt-0 lg:pt-4 rounded-2xl md:rounded-xl lg:rounded-none"
