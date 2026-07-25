@@ -70,7 +70,7 @@ const HeroSection = () => {
             <div id="bottom" className="w-full lg:h-3/4 flex flex-col ">
               <motion.div
                 id="heading"
-                className="lg:h-3/5 w-full border-b border-[#2d4a47]/20 lg:border-b-2 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex flex-col sm:flex-row pb-1 sm:pb-0 lg:pb-0 pt-4 lg:pt-0"
+                className="lg:h-3/5 w-full border-b border-[#2d4a47]/20 lg:border-b-2 pl-4 sm:pl-6 md:pl-8 lg:pl-14 flex flex-col sm:flex-row pb-1 sm:pb-0 lg:pb-3 pt-4 lg:pt-0"
                 variants={fadeUp}
                 custom={0.2}
               >
