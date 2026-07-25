@@ -75,7 +75,27 @@ const HeroSection = () => {
                 custom={0.2}
               >
                 {/* Main Heading */}
-                <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-center  items-center md:items-start ">
+                <div className="space-y-4 w-full sm:w-4/5 lg:w-4/5 flex flex-col justify-start  items-center md:items-start ">
+                  <motion.div
+                    id="image"
+                    className="lg:h-full w-full flex justify-center lg:justify-start items-end pb-4 sm:pb-6 lg:pb-0"
+                    variants={scaleIn}
+                    style={{ y: rightImageY }}
+                  >
+                    <motion.div
+                      className="block md:hidden w-full max-w-50 sm:max-w-md md:max-w-lg lg:max-w-none aspect-square sm:aspect-4/5 lg:aspect-auto lg:h-auto"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 120, damping: 15 }}
+                    >
+                      <Image
+                        src={"/asset/images/HerosecImg/hero3.jpeg"}
+                        width={600}
+                        height={300}
+                        alt="Mystical energy visualization"
+                        className="w-full lg:w-[80%] h-full object-cover pt-0 lg:pt-4 rounded-2xl md:rounded-xl lg:rounded-none"
+                      />
+                    </motion.div>
+                  </motion.div>
                   <motion.h1
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-marcellus text-[#2d4a47] leading-tight text-center md:text-left"
                     variants={fadeUp}
@@ -94,9 +114,11 @@ const HeroSection = () => {
                   >
                     Work With Me
                   </motion.button> */}
-                  <Link href="/contact" className="pill-btn">
-                    WORK WITH ME
-                  </Link>
+                  <motion.div className="hidden md:block">
+                    <Link href="/contact" className="pill-btn mt-3">
+                      WORK WITH ME
+                    </Link>
+                  </motion.div>
                 </div>
                 {/* right img */}
                 {/* <motion.div className="w-full sm:w-1/5 lg:w-1/5 flex items-end justify-start sm:justify-end lg:justify-end mt-4 sm:mt-0" variants={fadeUp} custom={0.5}>
@@ -107,18 +129,23 @@ const HeroSection = () => {
               </motion.div>
               <motion.div
                 id="images"
-                className="lg:h-2/5 w-full flex flex-col sm:flex-row pl-4 sm:pl-6 md:pl-8 lg:pl-6 pt-6 sm:pt-0 lg:pt-0 gap-6 sm:gap-0 "
+                className="lg:h-2/5 w-full flex flex-col sm:flex-row pl-4 sm:pl-6 md:pl-8 lg:pl-14 sm:pt-0 lg:pt-0 gap-6 sm:gap-0 "
                 variants={fadeUp}
                 custom={0.6}
               >
                 <div className="w-full sm:w-4/5 lg:w-4/5 flex flex-col sm:flex-row ">
-                  <div className="w-full sm:w-3/4 lg:w-4/4 h-full flex justify-center sm:justify-start lg:justify-center items-center py-4 sm:py-0">
-                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#2d4a47] font-marcellus text-center sm:text-left lg:text-center">
+                  <div className="w-full h-full py-4 sm:py-2">
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#2d4a47] font-marcellus text-center md:text-left">
                       <i>
-                        Energy Healing <br /> with <span className="font-calibry text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-[#d97560]">Smita Saha</span>
+                        Energy Healing <br /> with <span className="font-calibry text-3xl sm:text-4xl md:text-5xl lg:text-5xl leading-tight text-[#d97560]">Smita Saha</span>
                       </i>{" "}
                     </p>
                   </div>
+                  <motion.div className="block md:hidden text-center">
+                    <Link href="/contact" className="pill-btn">
+                      WORK WITH ME
+                    </Link>
+                  </motion.div>
                   {/* <div className="w-full sm:w-1/4 lg:w-1/4 h-full flex justify-center sm:justify-end lg:justify-end items-start">
                     <motion.div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44" style={{ y: leftImageY }}>
                       <Image src={"/asset/images/HerosecImg/hero2.png"} height={500} width={500} alt="Smita Saha Profile" className="w-full h-full object-cover" />

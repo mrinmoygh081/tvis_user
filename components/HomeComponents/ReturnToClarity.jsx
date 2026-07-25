@@ -64,7 +64,7 @@ const ReturnToClarity = () => {
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Image src={"/asset/images/smita.png"} alt="Smita Saha - Certified Energy Healer" className="object-cover" fill />
+              <Image src={"/asset/images/smita.jpg"} alt="Smita Saha - Certified Energy Healer" className="object-cover" fill />
             </motion.div>
 
             {/* Signature */}

@@ -124,8 +124,15 @@ const GiftOfLight = () => {
       >
         {/* RIGHT CONTENT */}
         <div className="w-full  lg:w-1/2 text-center lg:text-center max-w-2xl font-semibold lg:max-w-163">
+          <motion.div
+            className="relative rounded-full overflow-hidden w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 mx-auto md:hidden"
+            animate={{ scale: [1, 1.03, 1] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Image src={"/asset/images/candle.jpeg"} alt="Smita Saha - Certified Energy Healer" className="object-cover" fill />
+          </motion.div>
           {/* Small Star Icon */}
-          <motion.div className="flex justify-center mb-3" variants={elegantTextVariants}>
+          <motion.div className="flex mt-3 justify-center mb-3" variants={elegantTextVariants}>
             <span className="text-3xl text-[#244a37]">
               <Sparkles className="w-7 h-7" />
             </span>

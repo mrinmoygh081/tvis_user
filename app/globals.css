@@ -79,7 +79,7 @@ body.lenis-ready {
   cursor: pointer;
 
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
 
@@ -161,4 +161,13 @@ body.lenis-ready {
 
 .swiper-pagination-bullet-active {
   opacity: 1;
+}
+
+.bg-connect {
+  background-image: url("../public/asset/images/connect.png");
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

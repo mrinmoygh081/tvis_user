@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { url } from "inspector";
 import Link from "next/link";
 
 const ContactPage = () => {
@@ -152,17 +153,17 @@ const ContactPage = () => {
             </button>
           </form> */}
 
-          <aside className="space-y-6 rounded-2xl bg-[#d5dacd] p-6 sm:p-8 border border-[#2d4a47]/10">
+          <aside className="space-y-6 rounded-2xl p-6 sm:p-8 bg-contain bg-center bg-no-repeat bg-connect">
             <h2 className="text-xl font-semibold text-[#2d4a47] font-marcellus">Other ways to reach out</h2>
 
             <div className="space-y-4 text-sm sm:text-base text-[#2d4a47] font-marcellus">
-              <p>If you prefer, you can also reach out directly via email or follow along on social channels for reflections, offerings, and updates.</p>
+              {/* <p>If you prefer, you can also reach out directly via email or follow along on social channels for reflections, offerings, and updates.</p> */}
 
               <div className="space-y-2">
                 <p className="font-semibold font-marcellus tracking-wide uppercase text-xs text-[#2d4a47]/80">Email</p>
                 <p>
-                  <Link href="mailto:care@tvsworld.com" target="_blank">
-                    care@tvsworld.com
+                  <Link href="mailto:smita@tvsworld.com" target="_blank">
+                    smita@tvsworld.com
                   </Link>
                 </p>
               </div>
