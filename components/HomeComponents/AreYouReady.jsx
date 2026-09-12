@@ -1,9 +1,42 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import { motion } from "framer-motion";
 
 const AreYouReady = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("idle");
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("success");
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   // Animation Variants
   const shutterVariants = {
     hidden: { scaleX: 1, originX: 0 },
@@ -92,7 +125,7 @@ const AreYouReady = () => {
           </motion.p>
 
           {/* Form */}
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Row 1: First Name and Last Name */}
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.div className="flex-1" variants={itemVariants}>
@@ -103,6 +136,8 @@ const AreYouReady = () => {
                   type="text"
                   id="firstName"
                   name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
@@ -114,6 +149,8 @@ const AreYouReady = () => {
                   type="text"
                   id="lastName"
                   name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
@@ -130,6 +167,8 @@ const AreYouReady = () => {
                   id="email"
                   name="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
@@ -141,6 +180,8 @@ const AreYouReady = () => {
                   type="tel"
                   id="phone"
                   name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
@@ -156,6 +197,8 @@ const AreYouReady = () => {
                 name="message"
                 rows={5}
                 required
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base resize-none focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
               ></textarea>
             </motion.div>
@@ -163,13 +206,17 @@ const AreYouReady = () => {
             {/* Submit Button */}
             <motion.button
               type="submit"
-              className="w-full sm:w-auto py-3 px-6 sm:px-8 bg-[#e75f47] text-black font-sans font-semibold text-sm sm:text-base rounded-full hover:bg-[#ff5252] transition-colors duration-200 mt-6"
+              disabled={status === "submitting"}
+              className="w-full sm:w-auto py-3 px-6 sm:px-8 bg-[#e75f47] text-black font-sans font-semibold text-sm sm:text-base rounded-full hover:bg-[#ff5252] transition-colors duration-200 mt-6 disabled:opacity-60 disabled:cursor-not-allowed"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              BOOK A SESSION
+              {status === "submitting" ? "SENDING..." : "BOOK A SESSION"}
             </motion.button>
+
+            {status === "success" && <p className="text-sm font-sans text-green-700 mt-2">Thank you! Your message has been sent successfully.</p>}
+            {status === "error" && <p className="text-sm font-sans text-red-600 mt-2">Something went wrong. Please try again later.</p>}
           </form>
         </div>
       </motion.div>

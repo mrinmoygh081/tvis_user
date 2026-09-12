@@ -1,10 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { url } from "inspector";
 import Link from "next/link";
+import { useState } from "react";
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("success");
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#F3EDE5] text-[#2d4a47]">
       <section className="mx-auto max-w-5xl px-4 py-24 sm:px-6 lg:px-8">
@@ -18,8 +51,7 @@ const ContactPage = () => {
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[1.4fr_minmax(0,1fr)]">
-          <form className="space-y-4">
-            {/* Row 1: First Name and Last Name */}
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.div className="flex-1">
                 <label htmlFor="firstName" className="block text-[#2d5016] font-sans text-sm mb-1">
@@ -29,6 +61,8 @@ const ContactPage = () => {
                   type="text"
                   id="firstName"
                   name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
@@ -40,12 +74,13 @@ const ContactPage = () => {
                   type="text"
                   id="lastName"
                   name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
             </div>
 
-            {/* Row 2: Email and Phone */}
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.div className="flex-1">
                 <label htmlFor="email" className="block text-[#2d5016] font-sans text-sm mb-1">
@@ -56,6 +91,8 @@ const ContactPage = () => {
                   id="email"
                   name="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
@@ -67,12 +104,13 @@ const ContactPage = () => {
                   type="tel"
                   id="phone"
                   name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
                 />
               </motion.div>
             </div>
 
-            {/* Row 3: Message */}
             <motion.div>
               <label htmlFor="message" className="block text-[#2d5016] font-sans text-sm mb-1">
                 Message <span className="text-red-600">*</span>
@@ -82,6 +120,8 @@ const ContactPage = () => {
                 name="message"
                 rows={5}
                 required
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full px-4 py-2.5 sm:py-2 border-2 border-[#2d5016]  bg-transparent text-[#2d5016] font-sans text-sm sm:text-base resize-none focus:outline-none focus:ring-2 focus:ring-[#2d5016]"
               ></textarea>
             </motion.div>
@@ -89,12 +129,16 @@ const ContactPage = () => {
             {/* Submit Button */}
             <motion.button
               type="submit"
-              className="w-full sm:w-auto py-3 px-6 sm:px-8 bg-[#e75f47] text-black font-sans font-semibold text-sm sm:text-base rounded-full hover:bg-[#ff5252] transition-colors duration-200 mt-6"
+              disabled={status === "submitting"}
+              className="w-full sm:w-auto py-3 px-6 sm:px-8 bg-[#e75f47] text-black font-sans font-semibold text-sm sm:text-base rounded-full hover:bg-[#ff5252] transition-colors duration-200 mt-6 disabled:opacity-60 disabled:cursor-not-allowed"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              BOOK A SESSION
+              {status === "submitting" ? "SENDING..." : "BOOK A SESSION"}
             </motion.button>
+
+            {status === "success" && <p className="text-sm font-sans text-green-700 mt-2">Thank you! Your message has been sent successfully.</p>}
+            {status === "error" && <p className="text-sm font-sans text-red-600 mt-2">Something went wrong. Please try again later.</p>}
           </form>
           {/* <form className="space-y-5 rounded-2xl border border-[#2d4a47]/15 bg-[#F3EDE5] p-6 shadow-sm sm:p-8 backdrop-blur-sm">
             <div>
